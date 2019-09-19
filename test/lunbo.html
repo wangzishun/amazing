@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>轮播图</title>
+    <link rel="stylesheet" href="css/main.css" />
+    <script src="https://cdn.bootcss.com/jquery/1.9.1/jquery.js"></script>
+    <script src="./slide.js"></script>
+    <style>
+        ul li {
+            list-style: none;
+            margin: 0;
+        }
+
+        ul {
+            margin: 0;
+        }
+
+        .content_solution_wrap {
+            height: 478px;
+            background-color: #343434;
+            color: #ffffff;
+        }
+
+        .main {
+            width: 1200px;
+            margin: 0 auto;
+        }
+
+        .content_solution_wrap h1 {
+            font-weight: normal;
+            padding-top: 50.5px;
+            margin-top: 0;
+            margin-bottom: 35.6px;
+            text-align: center;
+            font-size: 28px;
+            line-height: 30px;
+        }
+
+        .content_solution_wrap img {
+            width: 100%;
+        }
+
+        .pre_slide img {
+            position: absolute;
+            top: 50%;
+            transform: translate(0, -50%);
+            -webkit-transform: translate(0, -50%);
+            /* for Chrome || Safari */
+            -moz-transform: translate(0, -50%);
+            /* for Firefox */
+            -ms-transform: translate(0, -50%);
+            /* for IE */
+            -o-transform: translate(0, -50%);
+            /* for Opera */
+            cursor: pointer;
+            /*IE8 不兼容transform，所以箭头底部在中间位置*/
+        }
+
+        .next_slide img {
+            position: absolute;
+            top: 50%;
+            transform: translate(0, -50%);
+            -webkit-transform: translate(0, -50%);
+            /* for Chrome || Safari */
+            -moz-transform: translate(0, -50%);
+            /* for Firefox */
+            -ms-transform: translate(0, -50%);
+            /* for IE */
+            -o-transform: translate(0, -50%);
+            /* for Opera */
+            cursor: pointer;
+        }
+
+        .content_solution_wrap .pre_slide {
+            float: left;
+            width: 1.73%;
+            height: 100%;
+            position: relative;
+        }
+
+        .content_solution_wrap .next_slide {
+            float: left;
+            width: 1.73%;
+            height: 100%;
+            position: relative;
+        }
+
+        .content_solution_wrap .slide_show {
+            height: 361.9px;
+        }
+
+        .slide_show .detail_slide {
+            float: left;
+            width: 96.54%;
+            height: 100%;
+        }
+
+        .slide_show .detail_slide .show_box {
+            width: 92%;
+            margin: 0 auto;
+            height: 100%;
+            overflow: hidden;
+        }
+
+        .slide_show .detail_slide .show_box>ul {
+            width: 400%;
+            /*共有四个li*/
+            height: 100%;
+            position: relative;
+        }
+
+        .slide_show .detail_slide .show_box>ul>li {
+            width: 25%;
+            box-sizing: border-box;
+            top: 0;
+            position: absolute;
+        }
+
+        .show_items .show_items_left {
+            width: 50%;
+            float: left;
+        }
+
+        .show_items img {
+            width: 90%;
+        }
+
+        .show_items .show_items_right {
+            width: 50%;
+            padding-right: 10px;
+            box-sizing: border-box;
+            float: left;
+        }
+
+        .show_items .show_items_right h2 {
+            font-size: 18px;
+            line-height: 18px;
+            font-weight: normal;
+            margin-top: 0;
+            margin-bottom: 30px;
+        }
+
+        .show_items .show_items_right p {
+            font-size: 14px;
+            line-height: 24px;
+        }
+
+        /*ie不兼容first-child伪类*/
+        .left_item {
+            float: left;
+        }
+
+        .right_item {
+            float: right;
+        }
+
+        /*ie不兼容first-child伪类 end*/
+    </style>
+</head>
+
+<body>
+    <div class="content_solution_wrap">
+        <div class="main">
+            <h1>轮播图</h1>
+            <div class="slide_show">
+                <!--左箭头-->
+                <div class="pre_slide"><img src=" img/left_arrow.png" alt="" /></div>
+                <div class="detail_slide">
+                    <!--要轮播的块-->
+                    <div class="show_box">
+                        <ul id="showItems">
+                            <!--每个轮播内容-->
+                            <li>
+                                <div class="show_items">
+                                    <div class="show_items_left">
+                                        <img src=" img/image_01.jpg" alt="" />
+                                    </div>
+                                    <div class="show_items_right">
+                                        <h2>slide1 标题</h2>
+                                        <p>slide1 内容</p>
+                                    </div>
+                                </div>
+                            </li>
+                            <!--每个轮播内容 end-->
+                            <li>
+                                <div class="show_items">
+                                    <div class="show_items_left">
+                                        <img src=" img/image_02.jpg" alt="" />
+                                    </div>
+                                    <div class="show_items_right">
+                                        <h2>slide2 标题</h2>
+                                        <p>slide2 内容</p>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="show_items">
+                                    <div class="show_items_left">
+                                        <img src=" img/image_03.jpg" alt="" />
+                                    </div>
+                                    <div class="show_items_right">
+                                        <h2>slide3 标题</h2>
+                                        <p>slide3 内容</p>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="show_items">
+                                    <div class="show_items_left">
+                                        <img src=" img/image_04.jpg" alt="" />
+                                    </div>
+                                    <div class="show_items_right">
+                                        <h2>slide4 标题</h2>
+                                        <p>slide4 内容</p>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <!--要轮播的块 end-->
+                </div>
+                <!--右箭头-->
+                <div class="next_slide"><img src=" img/right_arrow.png" alt="" /></div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

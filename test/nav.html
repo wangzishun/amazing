@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .nav-menu {
+            width: 1220px;
+            margin: 0 auto;
+            display: flex;
+            position: fixed;
+        }
+
+        .nav-menu a {
+            /* display: block; */
+            float: left;
+            width: 200px;
+            color: #333;
+            text-align: center;
+            border: 1px solid #ccc;
+            background: #fff;
+            /* line-height: 5vh; */
+            font-size: 25px;
+            text-decoration: none;
+            /* background-image: linear-gradient(to bottom, #ffffff, #ddd); */
+        }
+
+        .nav-menu a.nav-active {
+            color: #fff;
+            background: #333;
+            /* background-image: linear-gradient(to bottom, #333, #000); */
+        }
+        .content{
+            width: 400px;
+            height: 400px;
+            background-color: #ccc;
+            border: brown double; 
+        }
+    </style>
+</head>
+
+<body>
+    <div class='nav-menu'>
+        <a href='#' class='nav-active'>Tab 1</a>
+        <a href='#' style=''>Tab 2</a>
+        <a href='#'>Tab3</a>
+        <a href="#">Tab 4</a>
+        <a href="#">Tab 5</a>
+        <a href="#">Tab 6</a>
+    </div>
+    <div class="content"></div>
+    <div class="content"></div>
+    <div class="content"></div>
+    <div class="content"></div>
+</body>
+
+</html>
