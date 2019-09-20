@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="format-detection" content="telephone=no,email=no,adress=no" />
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <title>simpleNavFollowing</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .nav-container {
+            width: 100%;
+            height: 40px;
+            background: #333;
+            position: fixed;
+
+        }
+
+        .nav-wrapper {
+            margin: 0 auto;
+            width: 1220px;
+        }
+
+        .nav-wrapper a {
+            display: block;
+            position: relative;
+            float: left;
+            margin-left: 20px;
+            height: 38px;
+            line-height: 28px;
+            text-align: center;
+            background-color: rgb(109, 90, 90);
+            color: #fff;
+            border-bottom: 2px solid transparent;
+        }
+
+        .nav-wrapper a:hover {
+            border-bottom: 2px solid brown;
+        }
+
+        .nav-wrapper a.active {
+            background-color: brown;
+            color: #fff;
+        }
+
+        #main {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        #main div {
+            height: 300px;
+            background-color: #efefef;
+            border-top: 1px solid #ccc;
+        }
+
+        #main div:nth-child(2n) {
+            background-color: #fafafa;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="nav-container">
+        <div class="nav-wrapper">
+            <a href="#page0" rel="external nofollow">page0</a>
+
+            <a href="#page1" rel="external nofollow" class="active">page1</a>
+            <a href="#page2" rel="external nofollow">page2page2</a>
+            <a href="#page3" rel="external nofollow">page3page3page3</a>
+            <a href="#page4" rel="external nofollow">page4page4page4</a>
+            <a href="#page5" rel="external nofollow">page5page5page5page5</a>
+            <a href="#page6" rel="external nofollow">page6</a>
+        </div>
+    </div>
+
+    <div id="main">
+        <div class="main-content" id="page0">page0</div>
+        <div class="main-content" id="page1">page1</div>
+        <div class="main-content" id="page2" style="height: 400px;">page2</div>
+        <div class="main-content" id="page3">page3</div>
+        <div class="main-content" id="page4">page4</div>
+        <div class="main-content" id="page5" style="height: 300px;">page5</div>
+        <div class="main-content" id="page6" style="height: 600px;">page6</div>
+    </div>
+</body>
+<script src="http://www.jq22.com/jquery/jquery-1.10.2.js"></script>
+
+<script>
+    $(function () {
+        var nav = $(".nav-wrapper");
+        var mainContent = $(".main-content");
+        var mainTopArr = new Array();
+        for (var i = 0; i < mainContent.length; i++) {
+            var top = mainContent.eq(i).offset().top;
+            mainTopArr.push(top);
+        }
+
+        nav.find("a[href^='#']").click(function (e) {
+            e.preventDefault();
+            $('html, body').animate({
+                scrollTop: $(this.hash).offset().top
+            }, 400);
+        });
+        
+        $(window).scroll(function () {
+            var scrollTop = $(window).scrollTop();
+            var k;
+            for (var i = 0; i < mainTopArr.length; i++) {
+                if (scrollTop >= mainTopArr[i]) {
+                    k = i;
+                }
+            }
+            console.log(scrollTop)
+            nav.find("a").eq(k).addClass("active").siblings().removeClass("active");
+        });
+
+        function debounce(fn) {
+            var timer;
+            var _self = fn;
+            return function () {
+                clearTimeout(timer);
+                var _me = this
+                timer = setTimeout(function () {
+                    _self.call(_me, args)
+                }, 200)
+            }
+        }
+    });
+</script>
+
+</html>

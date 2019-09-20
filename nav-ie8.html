@@ -1,157 +1,178 @@
 <!DOCTYPE html
-	PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+    PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 
 <head>
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-	<title>nav</title>
-	<link rel="stylesheet" href="css/index.css" />
-	<script src="https://cdn.bootcss.com/jquery/1.11.0/jquery.js"></script>
-	<style>
-		* {
-			margin: 0;
-			padding: 0;
-			list-style: none;
-			text-decoration: none;
-			text-align: center;
-		}
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>nav</title>
+    <link rel="stylesheet" href="css/index.css" />
+    <script src="https://cdn.bootcss.com/jquery/1.11.0/jquery.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            text-decoration: none;
+            text-align: center;
+        }
 
-		body {
-			min-width: 1220px;
-		}
+        body {
+            min-width: 1220px;
+        }
 
-		.nav-slide {
-			width: 100%;
-			height: 40px;
-			background: #49577e;
-			box-shadow: 0 0 2px;
-			position: fixed;
-			left: 0;
-			right: 0;
-		}
+        .nav-menu {
+            width: 100%;
+            height: 40px;
+            background: #49577e;
+            box-shadow: 0 0 2px;
+            position: fixed;
+            left: 0;
+            right: 0;
+        }
 
-		.nav-slide ul {
-			width: 960px;
-			height: 40px;
-			background: #306486;
-			position: relative;
-			margin: 0 auto;
-		}
+        .nav-menu ul {
+            width: 960px;
+            height: 40px;
+            background: #306486;
+            position: relative;
+            margin: 0 auto;
+        }
 
-		.nav-slide ul li {
-			float: left;
-		}
+        .nav-menu ul li {
+            float: left;
+        }
 
-		.nav-slide ul li a {
-			display: block;
-			padding: 0 10px;
-			line-height: 40px;
-			font-size: 14px;
-			font-weight: bold;
-			color: #fff;
-		}
+        .nav-menu ul li a {
+            display: block;
+            padding: 0 10px;
+            line-height: 40px;
+            font-size: 14px;
+            font-weight: bold;
+            color: #fff;
+        }
 
-		.nav-slide .block {
-			width: 48px;
-			height: 2px;
-			background: #fff;
-			position: absolute;
-			bottom: 0px;
-			left: 0;
-			z-index: 99;
-		}
+        .nav-menu .block {
+            width: 48px;
+            height: 2px;
+            background: #fff;
+            position: absolute;
+            bottom: 0px;
+            left: 0;
+            z-index: 99;
+        }
 
-		.test {
-			width: 400px;
-			height: 400px;
-		}
+        .main-content {
+            width: 400px;
+            height: 400px;
+            border: solid brown;
+        }
 
-		.test:nth-of-type(odd) {
-			background-color: #042942;
-		}
+        .main-content:nth-of-type(odd) {
+            background-color: #042942;
+        }
 
-		.test:nth-of-type(even) {
-			background-color: #83647b;
-		}
-	</style>
+        .main-content:nth-of-type(even) {
+            background-color: #83647b;
+        }
+    </style>
 </head>
 
 <body>
-	<div class="nav-slide">
-		<ul>
-			<li class="nav-current"><a href="#tar">啊手动阀手动阀</a></li>
-			<li><a href="#">sdfasdfasdfasdf</a></li>
-			<li><a href="#">sadfasdfasdfs</a></li>
-			<li><a href="#">jaasdf</a></li>
-			<li><a href="#">asdf</a></li>
-			<li><a href="#">asdfdsf</a></li>
-			<li><a href="#">asdfasdf</a></li>
-			<li><a href="#">阿斯蒂芬</a></li>
-			<li><a href="#">阿斯顿发射点范德萨分</a></li>
-			<div class="block"></div>
-		</ul>
-	</div>
-	<div class="test"></div>
-	<div class="test"></div>
-	<div class="test"></div>
-	<div class="test"></div>
-	<div class="test"></div>
-	<div class="test"></div>
-	<div class="test"></div>
-	<div class="test"></div>
-	<div class="test" id="tar">tar</div>
+    <div class="nav-menu">
+        <ul>
+            <li class="nav-current"><a href="#content-0">啊手动阀手动阀</a></li>
+            <li><a href="#content-1">sdfasdfasdfasdf</a></li>
+            <li><a href="#content-2">sadfasdfasdfs</a></li>
+            <li><a href="#content-3">jaasdf</a></li>
+            <li><a href="#content-4">asdf</a></li>
+            <li><a href="#content-5">asdfdsf</a></li>
+            <li><a href="#content-6">asdfasdf</a></li>
+            <li><a href="#content-7">阿斯蒂芬</a></li>
+            <li><a href="#content-8">阿斯顿发射点范德萨分</a></li>
+            <div class="block"></div>
+        </ul>
+    </div>
+    <div class="main-content" id="content-0"></div>
+    <div class="main-content" id="content-1"></div>
+    <div class="main-content" id="content-2"></div>
+    <div class="main-content" id="content-3"></div>
+    <div class="main-content" id="content-4"></div>
+    <div class="main-content" id="content-5"></div>
+    <div class="main-content" id="content-6"></div>
+    <div class="main-content" id="content-7"></div>
+    <div class="main-content" id="content-8">tar</div>
 </body>
 <script>
-	$(function () {
-		var $t, leftX, newWidth;
+    $(function () {
+        var $t, leftX, newWidth;
 
-		var $block = $('.block'),
-			$navList = $('.nav-slide ul li').find('a');
+        var $navMenu = $('.nav-menu'),
+            $navList = $('.nav-menu ul li').find('a'),
+            $block = $('.block');
 
-		changeBlock();
+        var mainContent = $('.main-content'),
+            contentTopArr = [];
 
-		$navList.click(function () {
-			$t = $(this);
-			$(".nav-current").toggleClass('nav-current');
-			$t.closest('li').toggleClass('nav-current', true);
+        mainContent.each(function (index, el) {
+            contentTopArr.push(mainContent.eq(index).offset().top)
+        })
+        console.log(contentTopArr)
+        $(window).scroll(function () {
+            var scrollTop = $(this).scrollTop();
+            var k;
+            for (var i = 0; i < contentTopArr.length; i++) {
+                if (scrollTop >= contentTopArr[i]) {
+                    k = i;
+                }
+            }
+            // alert(target)
+            console.log(k)
+            // $navList.eq(k).click().blur()
+        });
+        changeBlock();
 
-			changeBlock();
-			console.log('1111111' + ',' + leftX, newWidth);
-		})
-		$navList.hover(function () {
-			$t = $(this);
-			leftX = $t.position().left;
-			newWidth = $t.parent().width();
-			console.log('22222' + ',' + leftX, newWidth)
-			$block.stop().animate({
-				left: leftX,
-				width: newWidth
-			}, 300);
-		}, function () {
-			$block.stop().animate({
-				left: $block.data('rightLeft'),
-				width: $block.data('rightWidth')
-			}, 300)
-			console.log($block.data('rightWidth'))
-		})
-		$("a").click(function (e) {
-			// e.defaultPrevented();
-			$("html, body").animate({
-				scrollTop: $($(this).attr("href")).offset().top + "px"
-			}, {
-				duration: 500,
-				easing: "swing"
-			});
-			return false;
-		});
+        $navList.click(function () {
+            $t = $(this);
+            $(".nav-current").toggleClass('nav-current');
+            $t.closest('li').toggleClass('nav-current', true);
 
-		function changeBlock() {
-			$block.width($(".nav-current").width())
-				.css('left', $('.nav-current').position().left)
-				.data('rightLeft', $block.position().left)
-				.data('rightWidth', $block.width());
-		}
-	})
+            changeBlock();
+            // console.log('1111111' + ',' + leftX, newWidth);
+        })
+        $navList.hover(function () {
+            $t = $(this);
+            leftX = $t.position().left;
+            newWidth = $t.parent().width();
+            // console.log('22222' + ',' + leftX, newWidth)
+            $block.stop().animate({
+                left: leftX,
+                width: newWidth
+            }, 300);
+        }, function () {
+            $block.stop().animate({
+                left: $block.data('rightLeft'),
+                width: $block.data('rightWidth')
+            }, 300)
+            // console.log($block.data('rightWidth'))
+        })
+        $("a").click(function (e) {
+            e.preventDefault();
+            $("html, body").animate({
+                scrollTop: $($(this).attr("href")).offset().top + "px"
+            }, {
+                duration: 500,
+                easing: "swing"
+            });
+            return false;
+        });
+
+        function changeBlock() {
+            $block.width($(".nav-current").width())
+                .css('left', $('.nav-current').position().left)
+                .data('rightLeft', $block.position().left)
+                .data('rightWidth', $block.width());
+        }
+    })
 </script>
 
 </html>
