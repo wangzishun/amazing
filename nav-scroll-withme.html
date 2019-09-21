@@ -117,9 +117,10 @@
             for (var i = 0; i < mainTopArr.length; i++) {
                 if (scrollTop >= mainTopArr[i]) {
                     k = i;
+                    break
                 }
             }
-            console.log(scrollTop)
+            console.log(k,scrollTop)
             nav.find("a").eq(k).addClass("active").siblings().removeClass("active");
         });
     });
