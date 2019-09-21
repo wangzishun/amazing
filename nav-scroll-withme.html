@@ -92,8 +92,7 @@
         <div class="main-content" id="page6" style="height: 600px;">page6</div>
     </div>
 </body>
-<!-- <script src="http://www.jq22.com/jquery/jquery-1.10.2.js"></script> -->
-<script src="https://cdn.bootcss.com/jquery/1.11.0/jquery.js"></script>
+<script src="http://www.jq22.com/jquery/jquery-1.10.2.js"></script>
 
 <script>
     $(function () {
@@ -111,53 +110,18 @@
                 scrollTop: $(this.hash).offset().top
             }, 400);
         });
-
+        
         $(window).scroll(function () {
             var scrollTop = $(window).scrollTop();
-            // var k;
+            var k;
             for (var i = 0; i < mainTopArr.length; i++) {
                 if (scrollTop >= mainTopArr[i]) {
-                    // k = i;
-                    nav.find("a").eq(i).addClass("active").siblings().removeClass("active");
-                    // break;
+                    k = i;
                 }
             }
             console.log(scrollTop)
+            nav.find("a").eq(k).addClass("active").siblings().removeClass("active");
         });
-
-        // function debounce(fn) {
-        //     var timer;
-        //     var _self = fn;
-        //     return function () {
-        //         // clearTimeout(timer);
-        //         var _me = this
-        //         // timer = setTimeout(function () {
-        //         _self.call(_me)
-        //         // },500)
-        //     }
-        // }
-
-        // function throttle(fn, interval = 40) {
-        //     let timer = null;
-        //     let firstTime = true;
-
-        //     return function (...args) {
-        //         if (firstTime) {
-        //             // 第一次加载
-        //             fn.apply(this, args);
-        //             return firstTime = false;
-        //         }
-        //         if (timer) {
-        //             // 定时器正在执行中，跳过
-        //             return;
-        //         }
-        //         timer = setTimeout(function() {
-        //             clearTimeout(timer);
-        //             timer = null;
-        //             fn.apply(this, args);
-        //         }, interval);
-        //     };
-        // }
     });
 </script>
 
