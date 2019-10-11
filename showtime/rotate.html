@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+    .curve1 {
+      transform: rotate(0deg)
+    }
+    .curve2 {
+      transform-origin: 50% 50%;
+      transform: rotate(-120deg)
+    }
+    .curve3 {
+      transform-origin: 50% 50%;
+      transform: rotate(120deg)
+    }
+
+    .curve4 {
+      transform: rotate(0deg)
+    }
+    .curve5 {
+      transform-origin: 50% 50%;
+      transform: rotate(180deg)
+    }
+    .rotate {
+      background-color: rgb(5, 15, 52);
+      /* border-radius: 50%; */
+      transform-origin: 35px 35px;
+      /* animation: rotates 2s ease-in-out infinite both; */
+    }
+
+    @keyframes rotates {
+      0% {
+        transform: rotate(0deg)
+      }
+      100% {
+        transform: rotate(360deg)
+      }
+    }
+
+    </style>
+    
+</head>
+<body>
+
+    <svg width="70" height="70" class="rotate">
+     
+      <linearGradient id="linearGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+          <stop offset="0%" style="stop-color:rgb(149,184,234); stop-opacity:1"/>
+          <stop offset="50%" style="stop-color:rgb(57,76,118); stop-opacity:1"/>
+          <stop offset="100%" style="stop-color:rgb(12,24,61); stop-opacity:1"/>
+      </linearGradient>
+
+
+      <path d="M15 50 C 25 63.5, 45 63.5, 55 50" stroke="url(#linearGradient)" stroke-width="3" stroke-linecap="round" fill="none" class="curve1"/>
+      <path d="M15 50 C 25 63.5, 45 63.5, 55 50" stroke="url(#linearGradient)" stroke-width="3" stroke-linecap="round" fill="none" class="curve2"/>
+      <path d="M15 50 C 25 63.5, 45 63.5, 55 50" stroke="url(#linearGradient)" stroke-width="3" stroke-linecap="round" fill="none" class="curve3"/>
+
+
+      <path d="M25 40 C 25 50, 45 50, 45 35" stroke="url(#linearGradient)" stroke-width="5" stroke-linecap="round" fill="none" class="curve4"/>
+      <path d="M25 35 C 25 48, 45 50, 45 35" stroke="url(#linearGradient)" stroke-width="5" stroke-linecap="round" fill="none" class="curve5"/>
+
+      <circle cx="35" cy="35" r="17" stroke-linecap="round" stroke="rgb(23,37,76)" stroke-width="1" stroke-dasharray="1" fill="transparent"></circle>
+      <!-- <path d="M15 50 C 25 63.5, 45 63.5, 55 50" stroke="url(#linearGradient)" stroke-width="3" stroke-linecap="round" fill="none" class="curve5"/> -->
+
+<!-- <path d="M70 110 C 70 140, 110 140, 110 110" stroke="3" fill="none"/> -->
+      <!-- <path d="M50 60 C 70 50, 70 30, 50 10" stroke="url(#linearGradient)" stroke-width="3" stroke-linecap="round" fill="none"/> -->
+
+      
+
+      
+
+    </svg>
+
+    <div>
+
+    </div>
+</body>
+</html>
