@@ -4,16 +4,37 @@
                  @panstart.prevent="panStart"
                  @panmove.prevent="panMove"
                  @panend.prevent="panEnd">
-            <component v-for="(val,index) in componentList" 
-                        :key="index" :is="val" 
+            <!-- <component v-for="(val,index) in componentList" 
+                        :key="index"
+                        :is="val"
                         :style="{
                             zIndex:zIndex(index),
                             transition:`all ${transition(index)}s`,
                             transform:`translateY(${top(index)}) scale3d(${scale(index)},1,${scale(index)})`
                         }"
                        :ref="`touch${index}`"
-            ></component>  
-              
+            ></component> -->
+            <!-- <component 
+                        :is="componentList[1]"
+                        :style="{
+                            zIndex:zIndex(index),
+                            transition:`all ${transition(index)}s`,
+                            transform:`translateY(${top(index)}) scale3d(${scale(index)},1,${scale(index)})`
+                        }"
+                       ref="touch0"
+            ></component>
+             <component 
+                        :is="componentList[2]"
+                        :style="{
+                            zIndex:zIndex(index),
+                            transition:`all ${transition(index)}s`,
+                            transform:`translateY(${top(index)}) scale3d(${scale(index)},1,${scale(index)})`
+                        }"
+                       ref="touch1"
+            ></component> -->
+            <div v-for="(e,i) in 3" :ref="`rrr${i}`" :key="i">
+                {{e}}
+            </div>
         </v-touch>
     </div>
 </template>
@@ -102,6 +123,9 @@ export default {
     methods: {
         panStart(e) {
             e.preventDefault();
+            console.log(this.$refs)
+            // this.$refs.touch1[0].$emit('test');
+            // this.$refs.touch1[0].addAnimation();
             if (!this.canmove) {
                 return false
             }

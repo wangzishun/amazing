@@ -17,8 +17,12 @@ Vue.config.productionTip = false
 // Vue.prototype.$http  = axios;
 
 var VueTouch = require('vue-touch')
-Vue.use(VueTouch, {name: 'v-touch'})
+Vue.use(VueTouch, { name: 'v-touch' })
 
+//vue awesome swiper
+import VueAwesomeSwiper from 'vue-awesome-swiper';
+import 'swiper/dist/css/swiper.css'
+Vue.use(VueAwesomeSwiper)
 
 
 /* eslint-disable no-new */

@@ -2,6 +2,7 @@ import Vue from 'vue'
 import Router from 'vue-router'
 
 import total from '@/components/total'
+import swiper from '@/components/swiperShow'
 
 Vue.use(Router)
 
@@ -11,6 +12,11 @@ export default new Router({
       path: '/',
       name: 'total',
       component: total
+    },
+    {
+      path: '/swiper',
+      name: 'swiper',
+      component: swiper
     }
   ]
 })

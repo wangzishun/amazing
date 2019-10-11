@@ -16,18 +16,32 @@ export default {
     name: 'componentTwo',
     data() {
         return {
-
+            flag: true
         }
     },
     computed: {
+    },
+    methods: {
         addAnimation() {
             if (this.$store.state.hasAnimated.name == 'touch1' && this.$store.state.hasAnimated.hasAnimats) {
+                this.flag = true
                 return true
             } else {
+                this.flag = false
                 return false
             }
         }
-    }
+    },
+    mounted: function () {
+        let self = this;
+        this.$on('test', function () {
+            console.log(self.flag);
+            self.flag = 0;
+            console.log(self.flag);
+        })
+
+
+    },
 }
 </script>
 <style lang="scss" scoped>
