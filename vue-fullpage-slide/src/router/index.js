@@ -2,7 +2,7 @@ import Vue from 'vue'
 import Router from 'vue-router'
 
 import total from '@/components/total'
-import swiper from '@/components/swiperShow'
+import swiper from '@/components/swiperMain'
 
 Vue.use(Router)
 

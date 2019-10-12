@@ -6,11 +6,11 @@ import router from './router'
 import store from './store'
 
 import axios from 'axios'
-import viewPort from '../static/js/viewport'
+import viewPort from './assets/js/viewport'
 
 // viewPort()
-import '../static/css/reset.css'
-import '../static/css/animate.css'
+import './assets/css/reset.css'
+import './assets/css/animate.css'
 
 Vue.config.productionTip = false
 

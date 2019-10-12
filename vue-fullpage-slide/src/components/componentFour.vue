@@ -22,27 +22,27 @@ export default {
             index: 0,
             newList: [
                 {
-                    url: '/static/images/picture3.jpg',
+                    url: '@/assets/images/picture3.jpg',
                     title: 'balabalabalabala',
                     desc: 'balabalabalabalabalabalabalabalabalabalabalabala'
                 },
                 {
-                    url: '/static/images/picture3.jpg',
+                    url: '@/assets/images/picture3.jpg',
                     title: 'balabalabalabala',
                     desc: 'balabalabalabalabalabalabalabalabalabalabalabala'
                 },
                 {
-                    url: '/static/images/picture3.jpg',
+                    url: '@/assets/images/picture3.jpg',
                     title: 'balabalabalabala',
                     desc: 'balabalabalabalabalabalabalabalabalabalabalabala'
                 },
                 {
-                    url: '/static/images/picture3.jpg',
+                    url: '@/assets/images/picture3.jpg',
                     title: 'balabalabalabala',
                     desc: 'balabalabalabalabalabalabalabalabalabalabalabala'
                 },
                 {
-                    url: '/static/images/picture3.jpg',
+                    url: '@/assets/images/picture3.jpg',
                     title: 'balabalabalabala',
                     desc: 'balabalabalabalabalabalabalabalabalabalabalabala'
                 },
@@ -102,7 +102,7 @@ export default {
 </script>
 <style lang="scss" scoped>
 .container {
-    background: url(/static/images/bg_5.png) no-repeat;
+    background: url(../assets/images/bg_5.png) no-repeat;
     background-size: cover;
     color: #fff;
     padding: 0.8rem 0;

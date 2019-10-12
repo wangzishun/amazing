@@ -1,6 +1,6 @@
 <template>
     <swiper-slide>
-        <img class="delay-1s" :class="{animated:flag, fadeIn:flag, slower :flag}" src="@/assets/images/picture1.jpg" alt="" srcset="">
+        <img class="delay-1s" :class="{animated:flag, fadeIn:flag, slower :flag}" src="@/assets/images/picture3.jpg" alt="" srcset="">
     </swiper-slide>
 </template>
 <script>
@@ -12,10 +12,8 @@ export default {
         }
     },
     computed: {
-
+        
     }
 }
 </script>
-<style>
-
-</style>
+<style></style>

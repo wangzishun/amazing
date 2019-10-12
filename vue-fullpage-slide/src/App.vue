@@ -1,6 +1,6 @@
 <template>
     <div id="app">
-        <i class="icon "></i>
+        <!-- <i class="icon "></i> -->
         <!-- <audio src="../static/audio/bg.mp3" autoplay loop preload></audio> -->
         <router-view></router-view>
     </div>
@@ -8,7 +8,10 @@
 
 <script>
 export default {
-    name: 'App'
+    name: 'App',
+    methods: {
+       
+    }
 }
 </script>
 
@@ -18,7 +21,7 @@ html {
     width: 100%;
     height: 100%;
     overflow: hidden;
-    font-size: 12px;
+    /* font-size: 12px; */
 }
 .container {
     width: 100%;
@@ -35,7 +38,7 @@ html {
     display: inline-block;
     width: 20px;
     height: 20px;
-    background: url(../static/images/music.png) no-repeat;
+    background: url(./assets/images/music.png) no-repeat;
     background-size: 100%;
     margin: 10px;
     position: absolute;
@@ -43,4 +46,5 @@ html {
     top: 10px;
     z-index: 100;
 }
+
 </style>

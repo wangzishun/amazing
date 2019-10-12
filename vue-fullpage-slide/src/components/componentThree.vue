@@ -1,6 +1,6 @@
 <template>
     <div class="container">
-        <img src="/static/images/picture3.jpg" class="img" :class="{animated:addAnimation,slower:addAnimation,fadeIn:addAnimation}">
+        <img src="@/assets/images/picture3.jpg" class="img" :class="{animated:addAnimation,slower:addAnimation,fadeIn:addAnimation}">
         <div>
            <p :class="{animated:addAnimation,slower:addAnimation,fadeIn:addAnimation}" class="delay-1s">balabalabalabalabalabalabalabalabalabalabalabala</p>
            <p :class="{animated:addAnimation,slower:addAnimation,fadeIn:addAnimation}" class="delay-2s">balabalabalabala</p>
@@ -23,7 +23,7 @@ export default {
 </script>
 <style lang="scss" scoped>
 .container {
-    background: url(/static/images/bg_1.png) no-repeat;
+    background: url(../assets/images/bg_1.png) no-repeat;
     background-size: cover;
     text-align: center;
     .img {

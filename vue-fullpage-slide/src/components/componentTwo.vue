@@ -1,6 +1,6 @@
 <template>
     <div class="container">
-        <img  src="../../static/images/picture2.jpg" class="img" :class="{animated:addAnimation,slower:addAnimation,fadeIn:addAnimation}">
+        <img  src="@/assets/images/picture2.jpg" class="img" :class="{animated:addAnimation,slower:addAnimation,fadeIn:addAnimation}">
         <div class="text">
             <p>balabalabalabalabalabalabalabala</p>
             <p>balabalabalabala</p>
@@ -16,7 +16,6 @@ export default {
     name: 'componentTwo',
     data() {
         return {
-            flag: true
         }
     },
     computed: {
@@ -24,29 +23,25 @@ export default {
     methods: {
         addAnimation() {
             if (this.$store.state.hasAnimated.name == 'touch1' && this.$store.state.hasAnimated.hasAnimats) {
-                this.flag = true
                 return true
             } else {
-                this.flag = false
                 return false
             }
         }
     },
-    mounted: function () {
-        let self = this;
-        this.$on('test', function () {
-            console.log(self.flag);
-            self.flag = 0;
-            console.log(self.flag);
-        })
-
-
-    },
+    // mounted: function () {
+    //     let self = this;
+    //     this.$on('test', function () {
+    //         console.log(self.flag);
+    //         self.flag = 0;
+    //         console.log(self.flag);
+    //     })
+    // },
 }
 </script>
 <style lang="scss" scoped>
 .container {
-    background: url(/static/images/bg_1.png) no-repeat;
+    background: url(../assets/images/bg_1.png) no-repeat;
     background-size: cover;
     text-align: center;
     .img {

@@ -1,6 +1,6 @@
 <template>
     <div class="container">
-        <img src="../../static/images/picture_one.jpg" class="img" :class="{animated:flag, fadeIn:flag, slower :flag}">
+        <img src="@/assets/images/picture1.jpg" class="img" :class="{animated:addAnimation, fadeIn:flag, slower :flag}">
         <div class="">
             <p class="delay-1s" :class="{animated:flag, fadeIn:flag, slower :flag}">balabalabalabala</p>
             <p class="delay-2s" :class="{animated:flag, fadeIn:flag, slower :flag}">balabalabalabala</p>
@@ -14,36 +14,35 @@ export default {
     data() {
         return {
             flag: true,
-            ex:this.$store.state.hasAnimated.name == 'touch0' && (this.$route.query.finished || this.$store.state.hasAnimated.hasAnimats)
         }
     },
     computed: {
-        // addAnimation() {
-        //     if (this.$store.state.hasAnimated.name == 'touch0' && (this.$route.query.finished || this.$store.state.hasAnimated.hasAnimats)) {
-        //         this.$store.commit('showAnimation', {
-        //             hasAnimats: true,
-        //             name: 'touch0'
-        //         }) 
-        //         this.flag = true;
-        //         return true
-        //     } else {
-        //         this.flag = false;
-        //         return false
-        //     }
-        // }
+        addAnimation() {
+            if (this.$store.state.hasAnimated.name == 'touch0' && (this.$route.query.finished || this.$store.state.hasAnimated.hasAnimats)) {
+                this.$store.commit('showAnimation', {
+                    hasAnimats: true,
+                    name: 'touch0'
+                }) 
+                this.flag = true;
+                return true
+            } else {
+                this.flag = false;
+                return false
+            }
+        }
     },
-    mounted:function () {
-        let self = this;
-        this.$nextTick(function () {
-            this.$on('test', function () {
-                console.log(self.flag);
-                self.flag = 0;
-                console.log(self.flag);
-            })
+    // mounted:function () {
+    //     let self = this;
+    //     this.$nextTick(function () {
+    //         this.$on('test', function () {
+    //             console.log(self.flag);
+    //             self.flag = 0;
+    //             console.log(self.flag);
+    //         })
 
-        })
+    //     })
 
-    },
+    // },
     updated() {
         // console.log(1);
     }
@@ -51,7 +50,7 @@ export default {
 </script>
 <style lang="scss" scoped>
 .container {
-    background: url(/static/images/bg_1.png) no-repeat;
+    background: url(../assets/images/bg_1.png) no-repeat;
     background-size: cover;
     text-align: center;
     .img {
