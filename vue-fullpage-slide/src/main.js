@@ -6,9 +6,9 @@ import router from './router'
 import store from './store'
 
 import axios from 'axios'
-import viewPort from './assets/js/viewport'
+import viewPort from '../static/js/viewport'
 
-// viewPort()
+viewPort()
 import './assets/css/reset.css'
 import './assets/css/animate.css'
 

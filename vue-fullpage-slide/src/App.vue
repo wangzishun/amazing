@@ -21,7 +21,7 @@ html {
     width: 100%;
     height: 100%;
     overflow: hidden;
-    /* font-size: 12px; */
+    font-size: 100px;
 }
 .container {
     width: 100%;

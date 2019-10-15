@@ -2,8 +2,8 @@ import Vue from 'vue'
 import Router from 'vue-router'
 
 import total from '@/components/total'
-import swiper from '@/components/swiperMain'
-
+import pageMain from '@/components/swiperPageMain'
+import showTime from "@/components/showTime";
 Vue.use(Router)
 
 export default new Router({
@@ -14,9 +14,14 @@ export default new Router({
       component: total
     },
     {
-      path: '/swiper',
-      name: 'swiper',
-      component: swiper
+      path: '/pageMain',
+      name: 'pageMain',
+      component: pageMain
+    },
+    {
+      path: '/test',
+      name: 'test',
+      component: showTime
     }
   ]
 })
