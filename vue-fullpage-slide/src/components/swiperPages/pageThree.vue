@@ -1,7 +1,5 @@
 <template>
-    <div class="swiper-page-three">
-        <div class="bg bg-three"></div>
-    </div>
+    <div class="bg bg-three"></div>
 </template>
 <script>
 export default {

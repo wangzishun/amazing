@@ -1,6 +1,6 @@
 <template>
-    <div class="swiper-page-one">
-        <div class="bg bg-one"></div>
+    <div class="bg bg-one">
+
     </div>
 </template>
 <script>
@@ -20,11 +20,5 @@ export default {
 .bg-one {
     background: url(../../assets/images/bg_one.png) no-repeat;
     background-size: contain;
-}
-.swiper-page-one{
-    position: relative;
-    background-color: brown;
-    width: 100%;
-    height: 100%;
 }
 </style>

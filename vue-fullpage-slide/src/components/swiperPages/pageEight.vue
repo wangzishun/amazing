@@ -1,18 +1,23 @@
 <template>
-    <div class="swiper-page-eight">
-        <div class="bg bg-eight"></div>
+    <div class="bg bg-eight">
+        <componentBtn url="www.baidu.com" content=""></componentBtn>
     </div>
 </template>
 <script>
+import componentBtn from '@/components/componentButton'
 export default {
     name: 'swiperPageEight',
     data() {
         return {
-            flag: true
+            flag: true,
+            url: 'www.baidu.com'
         }
     },
     computed: {
 
+    },
+    components: {
+        componentBtn,
     }
 }
 </script>

@@ -1,7 +1,5 @@
 <template>
     <div id="app">
-        <!-- <i class="icon "></i> -->
-        <!-- <audio src="../static/audio/bg.mp3" autoplay loop preload></audio> -->
         <router-view></router-view>
     </div>
 </template>
@@ -55,7 +53,6 @@ html {
     width: 100%;
     height: 100%;
     overflow: hidden;
-    font-size: 100px;
 }
 .container {
     width: 100%;

@@ -3,7 +3,7 @@ import Router from 'vue-router'
 
 import total from '@/components/total'
 import pageMain from '@/components/swiperPageMain'
-import showTime from "@/components/showTime";
+import showTime from "@/pages/showTime";
 Vue.use(Router)
 
 export default new Router({
@@ -19,8 +19,8 @@ export default new Router({
       component: pageMain
     },
     {
-      path: '/test',
-      name: 'test',
+      path: '/show',
+      name: 'show',
       component: showTime
     }
   ]

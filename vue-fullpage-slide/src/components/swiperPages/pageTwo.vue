@@ -1,7 +1,5 @@
 <template>
-    <div class="swiper-page-two">
-        <div class="bg bg-two"></div>
-    </div>
+    <div class="bg bg-two"></div>
 </template>
 
 <script>
