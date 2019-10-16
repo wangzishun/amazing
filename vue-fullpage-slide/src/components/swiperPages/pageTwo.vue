@@ -15,11 +15,9 @@ export default {
 }
 </script>
 
-<style>
-.bg-two{
-    /* width: 7.5rem; */
-    /* height: 16rem; */
+<style scoped>
+.bg-two {
     background: url(../../assets/images/bg_two.png) no-repeat;
-    background-size: 6rem 12.8rem;
+    background-size: contain;
 }
 </style>

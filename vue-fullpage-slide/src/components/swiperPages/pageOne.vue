@@ -16,13 +16,15 @@ export default {
     }
 }
 </script>
-<style>
+<style scoped>
 .bg-one {
-    
     background: url(../../assets/images/bg_one.png) no-repeat;
-    background-size: 6rem 12.8rem;
-    /* background-size: 80% 80%; */
-   
-
+    background-size: contain;
+}
+.swiper-page-one{
+    position: relative;
+    background-color: brown;
+    width: 100%;
+    height: 100%;
 }
 </style>

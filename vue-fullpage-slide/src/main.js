@@ -5,16 +5,10 @@ import App from './App'
 import router from './router'
 import store from './store'
 
-import axios from 'axios'
-import viewPort from '../static/js/viewport'
-
-viewPort()
 import './assets/css/reset.css'
 import './assets/css/animate.css'
 
 Vue.config.productionTip = false
-
-// Vue.prototype.$http  = axios;
 
 var VueTouch = require('vue-touch')
 Vue.use(VueTouch, { name: 'v-touch' })

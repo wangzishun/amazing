@@ -1,11 +1,11 @@
 <template>
-    <div class="swiper-page-three">
-        <div class="bg bg-three"></div>
+    <div class="swiper-page-five">
+        <div class="bg bg-five"></div>
     </div>
 </template>
 <script>
 export default {
-    name: 'swiperPageThree',
+    name: 'swiperPageFive',
     data() {
         return {
             flag: true
@@ -17,8 +17,8 @@ export default {
 }
 </script>
 <style scoped>
-.bg-three {
-    background: url(../../assets/images/bg_three.png) no-repeat;
+.bg-five {
+    background: url(../../assets/images/bg_five.png) no-repeat;
     background-size: contain;
 }
 </style>
