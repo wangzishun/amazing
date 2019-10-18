@@ -62,13 +62,15 @@ li {
     text-align: center;
 }
 p {
-    font-size: 0.3rem;
+    font-size: 0.8rem;
 }
 .nav-btn {
     position: absolute;
-    width: 30px;
-    height: 30px;
+    width: 0.8rem;
+    height: 0.8rem;
     z-index: 999;
-    background: rebeccapurple;
+    background: url(../assets/images/nav_btn.png) no-repeat;
+    background-size: contain;
+    /* background: rebeccapurple; */
 }
 </style>

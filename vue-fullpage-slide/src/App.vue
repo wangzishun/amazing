@@ -8,41 +8,54 @@
 export default {
     name: 'App',
     methods: {
+        // flexible(window, document) {
+        //     let docEl = document.documentElement
+        //     let dpr = window.devicePixelRatio || 1
 
-    },
-    beforeCreate() {
-        // window.resize = {};
-
-        // var timer = null;
-        // var rem = 12;
-        // var doc = window.document;
-        // var docEl = doc.documentElement;
-
-        // /**
-        //  * 刷新页面REM值
-        //  */
-        // function refreshRem() {
-        //     var width = docEl.getBoundingClientRect().width;
-        //     width = width > 768 ? 640 : width;
-        //     rem = width / 7.5;
-        //     docEl.style.fontSize = rem + 'px';
-        // }
-
-        // /**
-        //  * 页面缩放或重载时刷新REM
-        //  */
-        // window.addEventListener('resize', function () {
-        //     clearTimeout(timer);
-        //     timer = setTimeout(refreshRem, 300);
-        // }, false);
-        // window.addEventListener('pageshow', function (e) {
-        //     if (e.persisted) {
-        //         clearTimeout(timer);
-        //         timer = setTimeout(refreshRem, 300);
+        //     // adjust body font size
+        //     function setBodyFontSize() {
+        //         if (document.body) {
+        //             document.body.style.fontSize = (12 * dpr) + 'px'
+        //         }
+        //         else {
+        //             document.addEventListener('DOMContentLoaded', setBodyFontSize)
+        //         }
         //     }
-        // }, false);
+        //     setBodyFontSize();
 
-        // refreshRem();
+        //     // set 1rem = viewWidth / 10
+        //     function setRemUnit() {
+        //         let visibleWidth = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight
+        //         let rem = visibleWidth / 10
+        //         docEl.style.fontSize = rem + 'px'
+        //     }
+
+        //     setRemUnit()
+
+        //     // reset rem unit on page resize
+        //     window.addEventListener('resize', setRemUnit)
+        //     window.addEventListener('pageshow', function (e) {
+        //         if (e.persisted) {
+        //             setRemUnit()
+        //         }
+        //     })
+
+        //     // detect 0.5px supports
+        //     if (dpr >= 2) {
+        //         let fakeBody = document.createElement('body')
+        //         let testElement = document.createElement('div')
+        //         testElement.style.border = '.5px solid transparent'
+        //         fakeBody.appendChild(testElement)
+        //         docEl.appendChild(fakeBody)
+        //         if (testElement.offsetHeight === 1) {
+        //             docEl.classList.add('hairlines')
+        //         }
+        //         docEl.removeChild(fakeBody)
+        //     }
+        // }
+    },
+    mounted() {
+        // this.flexible(document, window);
     }
 }
 </script>
