@@ -34,11 +34,6 @@ export default {
 }
 </script>
 <style lang="scss" scoped>
-.bg-three {
-    background: url(../../assets/images/bg_three.png) no-repeat center;
-    background-size: contain;
-    background-color: darkslategray;
-}
 .number-container {
     position: absolute;
     top: 32%;

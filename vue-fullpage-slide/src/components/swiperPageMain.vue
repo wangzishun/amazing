@@ -1,5 +1,5 @@
 <template>
-    <div class="swiper-page-Main">
+    <div class="swiper-page-main">
         <swiper :options="swiperOption" ref="swiperPageMain">
             <swiper-slide v-for="(val, index) in swiperPageList" :key="index">
                 <div :class="`page-container swiper-page-${index}`" :style="{}">
@@ -97,9 +97,17 @@ export default {
         console.log('追星启动...');
         let w = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
         let h = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
-        this.visibleHeight = h;
+        let flag = (w / h) > (750 / 1334);
+        if (flag) {
+            this.visibleHeight = h;
+            this.visibleWidth = h / 1334 * 750;
+        } else {
+            this.visibleWidth = w;
+            this.visibleHeight = w / 750 * 1334;
+        }
+        // this.visibleHeight = h;
         // this.visibleWidth = this.visibleHeight / 1334 * 750;
-        this.visibleWidth = w;
+        // this.visibleWidth = w;
         // this.visibleHeight = this.visibleWidth / 750 * 1334;
         console.log(this.visibleHeight)
         // alert(w +"+"+ h+"\n"+window.innerHeight)
@@ -117,13 +125,61 @@ export default {
     },
 };
 </script>
-<style>
-.bg {
+<style lang="scss">
+.swiper-page-main {
+    // display: flex;
+    // justify-content: center;
+}
+.page-container {
     position: absolute;
     left: 50%;
     transform: translate(-50%, 0);
-    background-color: darkslategray;
+    .bg {
+        // position: absolute;
+        // left: 50%;
+        // transform: translate(-50%, 0);
+        &.bg-one {
+            background: url(../assets/images/bg_one.png) no-repeat center;
+            background-size: cover;
+        }
+        &.bg-two {
+            background: url(../assets/images/bg_two.png) no-repeat center;
+            background-size: cover;
+            background-color: darkslategray;
+        }
+        &.bg-three {
+            background: url(../assets/images/bg_three.png) no-repeat center;
+            background-size: cover;
+            background-color: darkslategray;
+        }
+        &.bg-four {
+            background: url(../assets/images/bg_four.png) no-repeat center;
+            background-size: cover;
+            background-color: darkslategray;
+        }
+        &.bg-five {
+            background: url(../assets/images/bg_five.png) no-repeat center;
+            background-size: cover;
+            background-color: darkslategray;
+        }
+        &.bg-six {
+            background: url(../assets/images/bg_six.png) no-repeat center;
+            background-size: cover;
+            background-color: darkslategray;
+        }
+        &.bg-seven {
+            background: url(../assets/images/bg_seven.png) no-repeat center;
+            background-size: cover;
+            background-color: darkslategray;
+        }
+        &.bg-eight {
+            background: url(../assets/images/bg_eight.png) no-repeat center;
+            background-size: cover;
+            background-color: darkslategray;
+        }
+    }
 }
+
 /* 水平居中 */
 .h-center {
     position: absolute;
@@ -133,7 +189,9 @@ export default {
 
 .title {
     font-size: 0.4rem;
-    top: 2rem;
+    text-align: center;
+    height: 38%;
+    line-height: 3.5rem;
 }
 .touch-btn {
     position: fixed;

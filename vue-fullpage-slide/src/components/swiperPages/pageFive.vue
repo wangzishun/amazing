@@ -97,42 +97,37 @@ export default {
 }
 </script>
 <style lang="scss" scoped>
-.bg-five {
-    background-color: darkslategray;
-    background: url(../../assets/images/bg_five.png) no-repeat center;
-    background-size: contain;
-    .directive-container {
-        position: absolute;
-        display: flex;
-        justify-content: space-evenly;
-        top: 25%;
-        width: 100%;
-        li {
-            font-size: 0.3rem;
-        }
+.directive-container {
+    position: absolute;
+    display: flex;
+    justify-content: space-evenly;
+    top: 25%;
+    width: 100%;
+    li {
+        font-size: 0.3rem;
     }
-    .swiper-container {
-        position: absolute;
+}
+.swiper-container {
+    position: absolute;
 
-        top: 32%;
-        .content-container {
+    top: 32%;
+    .content-container {
+        display: flex;
+        flex-direction: column;
+        .content-wrapper {
             display: flex;
-            flex-direction: column;
-            .content-wrapper {
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                width: 7.5rem;
-                img {
-                    width: 3rem;
-                    height: 2rem;
-                }
-                p {
-                    font-size: 0.28rem;
-                }
-                span {
-                    font-size: 0.24rem;
-                }
+            align-items: center;
+            justify-content: center;
+            width: 7.5rem;
+            img {
+                width: 3rem;
+                height: 2rem;
+            }
+            p {
+                font-size: 0.28rem;
+            }
+            span {
+                font-size: 0.24rem;
             }
         }
     }

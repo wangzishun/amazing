@@ -50,52 +50,47 @@ export default {
 }
 </script>
 <style lang="scss" scoped>
-.bg-six {
-    background: url(../../assets/images/bg_six.png) no-repeat center;
-    background-size: contain;
-    background-color: darkslategray;
-    .content-container1 {
+.content-container1 {
+    position: absolute;
+    top: 20%;
+    width: 7rem;
+    .feature {
         position: absolute;
-        top: 20%;
-        width: 7rem;
-        .feature {
-            position: absolute;
-            span {
-                display: block;
-            }
-        }
-        .detail {
-            position: absolute;
-            left: 50%;
-            span {
-                display: block;
-            }
+        span {
+            display: block;
         }
     }
-    .content-container2 {
+    .detail {
         position: absolute;
-        top: 50%;
-        width: 7rem;
-        .detail {
-            position: absolute;
-            span {
-                display: block;
-            }
-        }
-        .feature {
-            position: absolute;
-            left: 50%;
-            span {
-                display: block;
-            }
+        left: 50%;
+        span {
+            display: block;
         }
     }
-    & > span {
+}
+.content-container2 {
+    position: absolute;
+    top: 50%;
+    width: 7rem;
+    .detail {
         position: absolute;
-        top: 80%;
+        span {
+            display: block;
+        }
     }
-    p {
-        font-size: 20px;
+    .feature {
+        position: absolute;
+        left: 50%;
+        span {
+            display: block;
+        }
     }
+}
+span {
+    position: absolute;
+    top: 80%;
+}
+p {
+    font-size: 20px;
 }
 </style>

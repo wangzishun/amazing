@@ -105,7 +105,10 @@ export default {
 </script>
 
 <style>
-html{
+html {
     /* font-size: 62.5%; */
+}
+.show-time {
+    background-color:tomato;
 }
 </style>

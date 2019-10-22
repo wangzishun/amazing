@@ -36,45 +36,39 @@ export default {
 }
 </script>
 <style lang="scss" scoped>
-.bg-four {
-    background: url(../../assets/images/bg_four.png) no-repeat center;
-    background-size: contain;
-    background-color: darkslategray;
+.content {
+    position: absolute;
+    width: 100%;
+    p {
+        font-size: 0.28rem;
+        margin-bottom: 0.16rem;
+    }
+    span {
+        font-size: 0.22rem;
+    }
+}
+.content1 {
+    top: 33%;
+    left: 10%;
+}
+.content2 {
+    top: 33%;
+    left: 70%;
+}
+.content3 {
+    top: 63%;
+    left: 10%;
+}
+.content4 {
+    top: 63%;
+    left: 70%;
+}
 
-    .content {
-        position: absolute;
-        width: 100%;
-        p {
-            font-size: 0.28rem;
-            margin-bottom: 0.16rem;
-        }
-        span {
-            font-size: 0.22rem;
-        }
-    }
-    .content1 {
-        top: 33%;
-        left: 10%;
-    }
-    .content2 {
-        top: 33%;
-        left: 70%;
-    }
-    .content3 {
-        top: 63%;
-        left: 10%;
-    }
-    .content4 {
-        top: 63%;
-        left: 70%;
-    }
-
-    img {
-        position: absolute;
-        height: 31.5%;
-        left: 50%;
-        top: 35.5%;
-        transform: translate(-50%, 0);
-    }
+img {
+    position: absolute;
+    height: 31.5%;
+    left: 50%;
+    top: 35.5%;
+    transform: translate(-50%, 0);
 }
 </style>

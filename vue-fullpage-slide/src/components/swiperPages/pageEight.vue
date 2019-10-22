@@ -28,19 +28,13 @@ export default {
 }
 </script>
 <style lang="scss" scoped>
-.bg-eight {
-
-    background: url(../../assets/images/bg_eight.png) no-repeat center;
-    background-size: contain;
-    background-color: darkslategray;
-    .content {
-        position: absolute;
-        top: 60%;
-        width: 7rem;
-        span {
-            display: block;
-            text-align: center;
-        }
+.content {
+    position: absolute;
+    top: 65%;
+    width: 10rem;
+    span {
+        display: block;
+        text-align: center;
     }
 }
 </style>

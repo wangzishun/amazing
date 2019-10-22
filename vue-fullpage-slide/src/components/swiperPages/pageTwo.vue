@@ -1,6 +1,6 @@
 <template>
     <div class="bg bg-two">
-        <div class="title h-center">
+        <div class="title">
             品牌优势
         </div>
         <div class="content content1">
@@ -31,20 +31,15 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.bg-two {
-    background: url(../../assets/images/bg_two.png) no-repeat center;
-    background-size: contain;
-    background-color: darkslategray;
-}
 .content {
     position: absolute;
     margin-left: 50%;
-    width: 5rem;
-    height: 5rem;
-    background-color: rgba(238, 130, 238, 0.185);
+    // margin-bottom: 20%;
+    // width: 5rem;
+    // height: 5rem;
+    // background-color: rgba(238, 130, 238, 0.185);
     p {
         font-size: 0.28rem;
-        padding-left: 0.4rem;
         line-height: 0.38rem;
     }
     span {
@@ -56,47 +51,17 @@ export default {
         line-height: 0.5rem;
         overflow: hidden;
     }
-}
-.content1 {
-    position: absolute;
-    top: 32%;
-}
-.content2 {
-    position: absolute;
-    top: 53%;
-}
-.content3 {
-    position: absolute;
-    top: 75%;
-}
-.brackets {
-    // margin: 50px auto;
-    // position: relative;
-    // width: 400px;
-    // height: 400px;
-    // background: white;
-    // box-sizing: border-box;
-    // border: 53.33333px solid #308ac9;
-    /* remember box-sizing was border-box */
-}
-// .brackets:after,
-.brackets:before {
-    content: "";
-    display: block;
-    position: absolute;
-    // box-sizing: border-box;
-}
-.brackets:before {
-    width: 240px;
-    height: 240px;
-    margin: 26.66667px;
-    border: 53.33333px solid #343432;
-    /* remember box-sizing was border-box */
-}
-.brackets:after {
-    width: 26.66667px;
-    height: 240px;
-    background: white;
-    margin: 26.66667px 133.33333px;
+    &.content1 {
+        // position: absolute;
+        margin-top: -16%;
+    }
+    &.content2 {
+        // position: absolute;
+        margin-top: 29.2%;
+    }
+    &.content3 {
+        // position: absolute;
+        margin-top: 75.5%;
+    }
 }
 </style>
