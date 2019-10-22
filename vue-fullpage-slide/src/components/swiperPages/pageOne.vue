@@ -18,7 +18,9 @@ export default {
 </script>
 <style scoped>
 .bg-one {
-    background: url(../../assets/images/bg_one.png) no-repeat;
+    background: url(../../assets/images/bg_one.png) no-repeat center;
+    /* background-size: contain; */
     background-size: contain;
+    background-color: darkslategray;
 }
 </style>

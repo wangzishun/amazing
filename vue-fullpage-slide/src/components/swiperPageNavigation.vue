@@ -17,11 +17,18 @@
                     :key="index"
                     @click="switchTo(index)"
                 >
-                    <p>{{ val }}</p>
+                    {{ val }}
                 </li>
             </ul>
         </div>
-        <i class="nav-btn" @click="navAction"></i>
+        <div class="nav-bar">
+            <img src="../assets/images/logo.png" alt="" />
+            <i
+                class="nav-btn"
+                :class="[navActionFlag ? 'nav-active' : 'nav-default']"
+                @click="navAction"
+            ></i>
+        </div>
     </div>
 </template>
 
@@ -50,27 +57,52 @@ export default {
 }
 </script>
 
-<style >
-.nav-container {
-    position: absolute;
-    background-color: brown;
-    height: 100%;
-    width: 100%;
-    z-index: 10;
-}
-li {
-    text-align: center;
-}
-p {
-    font-size: 0.8rem;
-}
-.nav-btn {
-    position: absolute;
-    width: 0.8rem;
-    height: 0.8rem;
-    z-index: 999;
-    background: url(../assets/images/nav_btn.png) no-repeat;
-    background-size: contain;
-    /* background: rebeccapurple; */
+<style lang="scss" scoped>
+.page-navigation {
+    .nav-container {
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        z-index: 888;
+        background: rgba(0, 3, 36, 0.9);
+        ul {
+            margin-top: 2.22rem;
+            li {
+                text-align: center;
+                font-size: 0.3rem;
+                margin-bottom: 0.82rem;
+            }
+        }
+    }
+    .nav-bar {
+        position: absolute;
+        height: 1rem;
+        width: 100%;
+        z-index: 999;
+        background: rgba(0, 3, 36, 1);
+
+        & > img {
+            position: absolute;
+            width: 1.6rem;
+            height: 0.5rem;
+            top: 0.25rem;
+            left: 0.4rem;
+        }
+        .nav-btn {
+            position: absolute;
+            width: 0.5rem;
+            height: 0.5rem;
+            top: 0.25rem;
+            right: 0.4rem;
+        }
+        .nav-active {
+            background: url(../assets/images/nav_btn_active.png) no-repeat;
+            background-size: contain;
+        }
+        .nav-default {
+            background: url(../assets/images/nav_btn_default.png) no-repeat;
+            background-size: contain;
+        }
+    }
 }
 </style>

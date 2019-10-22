@@ -14,10 +14,10 @@
                         :ref="`swiperPage${index}`"
                     >
                     </component>
-                    <div
+                    <!-- <div
                         class="test h-center"
                         style="background-color:brown;height:100px;width:100px;z-index:10;"
-                    ></div>
+                    ></div> -->
                 </div>
             </swiper-slide>
         </swiper>
@@ -57,7 +57,7 @@ export default {
                 observeParents: true,
                 // effect: 'flip',
                 // zoom: true,
-                effect: 'coverflow',
+                // effect: 'coverflow',
                 // coverflowEffect: {
                 //     rotate: 80,
                 //     stretch: 100,
@@ -66,7 +66,7 @@ export default {
                 //     // slideShadows: true
                 // },
 
-                
+
             },
             flag: false,
 
@@ -98,7 +98,9 @@ export default {
         let w = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
         let h = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
         this.visibleHeight = h;
-        this.visibleWidth = h / 1600 * 750;
+        // this.visibleWidth = this.visibleHeight / 1334 * 750;
+        this.visibleWidth = w;
+        // this.visibleHeight = this.visibleWidth / 750 * 1334;
         console.log(this.visibleHeight)
         // alert(w +"+"+ h+"\n"+window.innerHeight)
 
@@ -120,19 +122,18 @@ export default {
     position: absolute;
     left: 50%;
     transform: translate(-50%, 0);
-    /* width: 2.81rem; */
-    /* height: 6rem; */
-    /* position: absolute;
-    margin-left: 50%;
-    left: -1.4rem; */
-
-    /* margin-top: -0.4rem; */
-    /* top: -1rem; */
+    background-color: darkslategray;
 }
+/* 水平居中 */
 .h-center {
     position: absolute;
     left: 50%;
     transform: translate(-50%, 0);
+}
+
+.title {
+    font-size: 0.4rem;
+    top: 2rem;
 }
 .touch-btn {
     position: fixed;
