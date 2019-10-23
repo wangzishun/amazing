@@ -61,7 +61,6 @@ export default {
                 on: {
                     slideChangeTransitionEnd: () => {
                         this.storeSwitchPageIndex(this.swiper.activeIndex);
-                        console.log(1);
                     },
                 }
                 // effect: 'flip',

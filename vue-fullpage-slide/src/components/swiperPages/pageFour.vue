@@ -41,10 +41,13 @@ export default {
     width: 100%;
     p {
         font-size: 0.28rem;
+        font-weight: 600;
+        color: rgba(148, 255, 245, 1);
         margin-bottom: 0.16rem;
     }
     span {
         font-size: 0.22rem;
+        font-weight: 300;
     }
     &.content1 {
         margin-top: 22%;
@@ -55,11 +58,11 @@ export default {
         left: 70%;
     }
     &.content3 {
-        margin-top: 82%;
+        margin-top: 81%;
         margin-left: 10%;
     }
     &.content4 {
-        margin-top: 82%;
+        margin-top: 81%;
         margin-left: 70%;
     }
 }

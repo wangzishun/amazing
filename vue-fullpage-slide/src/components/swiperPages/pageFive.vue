@@ -106,10 +106,10 @@ export default {
     line-height: 0.6rem;
     li {
         font-size: 0.3rem;
+        font-weight: 400;
     }
 }
 .swiper-container {
-    // height: 60%;
     .content-container {
         display: flex;
         flex-direction: column;
@@ -124,9 +124,11 @@ export default {
             }
             p {
                 font-size: 0.28rem;
+                font-weight: 600;
             }
             span {
                 font-size: 0.24rem;
+                font-weight: 400;
             }
         }
     }

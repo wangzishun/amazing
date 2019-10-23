@@ -51,6 +51,7 @@ export default {
 .content-title {
     position: absolute;
     font-size: 0.28rem;
+    font-weight: 600;
     width: 40%;
     text-align: center;
     &.title1 {
@@ -72,10 +73,13 @@ export default {
     }
     p {
         font-size: 0.24rem;
+        font-weight: 400;
         margin-top: 5%;
     }
     span {
         font-size: 0.2rem;
+        font-weight: 400;
+        color: rgba(165, 211, 255, 1);
     }
     &.detail1 {
         width: 50%;
@@ -95,6 +99,7 @@ export default {
     span {
         display: block;
         font-size: 0.2rem;
+        font-weight: 400;
         margin-bottom: 12.5%;
         &::before {
             content: "";
@@ -121,6 +126,9 @@ export default {
     margin-top: 125%;
     width: 100%;
     text-align: center;
+    font-size: 0.22rem;
+    font-weight: 400;
+    color:rgba(255,255,255,1);
 }
 
 p {

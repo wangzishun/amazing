@@ -49,10 +49,12 @@ export default {
         p {
             text-align: center;
             font-size: 0.26rem;
+            font-weight:600;
         }
         div {
             text-align: center;
             font-size: 0.22rem;
+            font-weight:300;
         }
         &.content1 {
             // margin-top: 32%;

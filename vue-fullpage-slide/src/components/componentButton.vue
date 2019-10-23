@@ -30,6 +30,7 @@ a {
     left: 50%;
     transform: translateX(-50%);
     font-size: 0.26rem;
+    font-weight: 600;
     color: rgba(255, 255, 255, 1);
     .btn-bg {
         display: inline-block;

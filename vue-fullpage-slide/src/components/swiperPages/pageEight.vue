@@ -33,5 +33,7 @@ export default {
     top: 65%;
     width: 100%;
     text-align: center;
+    font-size: 0.22rem;
+    font-weight: 300;
 }
 </style>

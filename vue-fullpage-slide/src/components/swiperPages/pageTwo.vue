@@ -4,16 +4,16 @@
             品牌优势
         </div>
         <div class="content content1">
-            <p>全适用</p>
-            <span>人尽所用，房尽所拍，<br />任一经纪人均可轻松上手拍摄</span>
+            <div>全适用</div>
+            <p>人尽所用，房尽所拍，<br />任一经纪人均可轻松上手拍摄</p>
         </div>
         <div class="content content2">
-            <p>全高效</p>
-            <span>自动量房，智能拼接，<br />房源标尺及空间信息一目了然</span>
+            <div>全高效</div>
+            <p>自动量房，智能拼接，<br />房源标尺及空间信息一目了然</p>
         </div>
         <div class="content content3">
-            <p>全智能</p>
-            <span>闪电拍摄，一键上传，<br />平均拍摄一套100㎡房源约10分钟</span>
+            <div>全智能</div>
+            <p>闪电拍摄，一键上传，<br />平均拍摄一套100㎡房源约10分钟</p>
         </div>
     </div>
 </template>
@@ -32,29 +32,36 @@ export default {
 <style lang="scss" scoped>
 .content {
     position: absolute;
-    margin-left: 52%;
-    p {
+    // margin-left: 52%;
+    right: 0;
+    width: 52%;
+    & > div {
         font-size: 0.28rem;
-        line-height: 0.38rem;
+        line-height: 0.9rem;
+        background: url(/static/img/icon_title.png) no-repeat;
+        background-size: contain;
+        height: 0.9rem;
+        width: 2rem;
+        text-align: center;
+        font-weight: 600;
     }
-    span {
+    p {
         display: inline-block;
+        margin-top: 3%;
         width: 10rem;
         font-size: 0.29rem;
-        font-family: PingFang SC;
         font-weight: 300;
         color: rgba(165, 211, 255, 1);
         line-height: 0.5rem;
-        overflow: hidden;
     }
     &.content1 {
-        margin-top: 15.8%;
+        margin-top: 12%;
     }
     &.content2 {
-        margin-top: 61.2%;
+        margin-top: 58%;
     }
     &.content3 {
-        margin-top: 107.5%;
+        margin-top: 104%;
     }
 }
 </style>

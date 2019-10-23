@@ -6,54 +6,22 @@
         <div
             class="number-container"
             v-for="(number, i) in numberList"
-            :key="i"
-            :class="`containerer${i}`"
+            :key="`container${i}`"
+            :class="`container${i}`"
         >
             <div
                 class="number"
                 v-for="(item, j) in number"
-                :key="j"
+                :key="`number${j}`"
                 :class="`number${j}`"
             >
-                <div><img :src="item.src" />{{ item.num }}</div>
+                <div>
+                    <img v-if="item.showImg" src="/static/img/rise.png" />
+                    {{ item.num }}
+                </div>
                 <span>{{ item.detail }}</span>
             </div>
         </div>
-        <!-- <div class="number-container container1">
-            <div class="number number1">
-                <div><img src="/static/img/rise.png" alt="" />350%</div>
-                <span>房均点击量</span>
-            </div>
-            <div class="number number2">
-                <div><img src="/static/img/rise.png" alt="" />130%</div>
-                <span>房均停留时长</span>
-            </div>
-            <div class="number number3">
-                <div><img src="/static/img/rise.png" alt="" />40%</div>
-                <span>用户返回率</span>
-            </div>
-        </div>
-        <div class="number-container container2">
-            <div class="number number4">
-                <div>500+</div>
-                <span>覆盖城市</span>
-            </div>
-
-            <div class="number number5">
-                <div>34000+</div>
-                <span>覆盖经纪门店</span>
-            </div>
-        </div>
-        <div class="number-container container3">
-            <div class="number number6">
-                <div>10000+</div>
-                <span>合作经济公司</span>
-            </div>
-            <div class="number number7">
-                <div>400000+</div>
-                <span>服务经纪人量</span>
-            </div>
-        </div> -->
         <div v-for="el in 4" :key="el" class="ripple" :class="{}"></div>
     </div>
 </template>
@@ -64,9 +32,9 @@ export default {
         return {
             // flag: true
             numberList: [
-                [{ num: '350%', detail: '房均点击量', src: '/static/img/rise.png' }, { num: '130%', detail: '房均停留时长', src: '/static/img/rise.png' }, { num: '40%', detail: '用户返回率', src: '/static/img/rise.png' }],
-                [{ num: '500+', detail: '覆盖城市', src: '' }, { num: '34000+', detail: '覆盖经纪门店', src: '' },],
-                [, { num: '10000+', detail: '合作经济公司', src: '' }, { num: '400000+', detail: '服务经纪人量', src: '' }],
+                [{ num: '350%', detail: '房均点击量', showImg: true }, { num: '130%', detail: '房均停留时长', showImg: true }, { num: '40%', detail: '用户返回率', showImg: true }],
+                [{ num: '500+', detail: '覆盖城市', showImg: false }, { num: '34000+', detail: '覆盖经纪门店', showImg: false },],
+                [{ num: '10000+', detail: '合作经济公司', showImg: false }, { num: '400000+', detail: '服务经纪人量', showImg: false }],
             ]
         }
     },
@@ -85,7 +53,10 @@ export default {
     .number {
         display: inline-block;
         & > div {
+            font-family: Avenir;
+            font-weight: 900;
             font-size: 0.44rem;
+            margin-bottom: 5%;
             img {
                 width: 0.31rem;
                 height: 0.33rem;
@@ -93,12 +64,13 @@ export default {
         }
 
         span {
+            font-weight: 300;
             font-size: 0.22rem;
             width: 100%;
         }
     }
 
-    &.container1 {
+    &.container0 {
         height: 30%;
 
         .number {
@@ -106,27 +78,27 @@ export default {
             text-align: center;
         }
     }
-    &.container2 {
+    &.container1 {
         .number {
             width: 45%;
         }
-        .number4 {
+        .number0 {
             margin-top: 5%;
         }
-        .number5 {
+        .number1 {
             margin-top: 20%;
         }
     }
-    &.container3 {
+    &.container2 {
         justify-content: flex-end;
         .number {
             height: 20%;
         }
-        .number6 {
+        .number0 {
             width: 48%;
             margin-top: -15%;
         }
-        .number7 {
+        .number1 {
             width: 32%;
         }
     }
