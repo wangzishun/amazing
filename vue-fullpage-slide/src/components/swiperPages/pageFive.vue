@@ -1,6 +1,6 @@
 <template>
     <div class="bg bg-five">
-        <div class="title h-center">
+        <div class="title">
             行业应用
         </div>
         <ul class="directive-container">
@@ -51,7 +51,7 @@ export default {
                 setWrapperSize: true,
                 // autoHeight: true,
                 slidesPerView: 1,
-                height: '7rem',
+                height: '60%',
                 resistanceRatio: 0,
                 observeParents: true,
             },
@@ -98,19 +98,18 @@ export default {
 </script>
 <style lang="scss" scoped>
 .directive-container {
-    position: absolute;
+    // position: absolute;
     display: flex;
     justify-content: space-evenly;
-    top: 25%;
     width: 100%;
+    height: 5%;
+    line-height: 0.6rem;
     li {
         font-size: 0.3rem;
     }
 }
 .swiper-container {
-    position: absolute;
-
-    top: 32%;
+    // height: 60%;
     .content-container {
         display: flex;
         flex-direction: column;
@@ -118,10 +117,10 @@ export default {
             display: flex;
             align-items: center;
             justify-content: center;
-            width: 7.5rem;
+            margin-top: 5%;
             img {
-                width: 3rem;
-                height: 2rem;
+                width: 42%;
+                // height: 2rem;
             }
             p {
                 font-size: 0.28rem;

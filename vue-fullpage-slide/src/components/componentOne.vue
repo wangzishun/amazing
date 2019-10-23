@@ -50,8 +50,6 @@ export default {
 </script>
 <style lang="scss" scoped>
 .container {
-    background: url(../assets/images/bg_1.png) no-repeat;
-    background-size: cover;
     text-align: center;
     .img {
         width: 5.2rem;

@@ -1,6 +1,6 @@
 <template>
     <div class="bg bg-four">
-        <div class="title h-center">
+        <div class="title">
             专属服务
         </div>
         <div class="content content1">
@@ -19,7 +19,7 @@
             <p>平台摄影师</p>
             <span>付费拍摄效率翻倍</span>
         </div>
-        <img src="../../assets/images/dynamic.png" alt="" />
+        <img src="/static/img/dynamic.png" alt="" />
     </div>
 </template>
 <script>
@@ -46,22 +46,22 @@ export default {
     span {
         font-size: 0.22rem;
     }
-}
-.content1 {
-    top: 33%;
-    left: 10%;
-}
-.content2 {
-    top: 33%;
-    left: 70%;
-}
-.content3 {
-    top: 63%;
-    left: 10%;
-}
-.content4 {
-    top: 63%;
-    left: 70%;
+    &.content1 {
+        margin-top: 22%;
+        margin-left: 10%;
+    }
+    &.content2 {
+        margin-top: 22%;
+        left: 70%;
+    }
+    &.content3 {
+        margin-top: 82%;
+        margin-left: 10%;
+    }
+    &.content4 {
+        margin-top: 82%;
+        margin-left: 70%;
+    }
 }
 
 img {

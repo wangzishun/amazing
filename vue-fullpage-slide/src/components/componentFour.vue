@@ -102,8 +102,6 @@ export default {
 </script>
 <style lang="scss" scoped>
 .container {
-    background: url(../assets/images/bg_5.png) no-repeat;
-    background-size: cover;
     color: #fff;
     padding: 0.8rem 0;
     .main {

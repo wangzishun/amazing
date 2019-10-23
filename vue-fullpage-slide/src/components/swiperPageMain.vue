@@ -9,19 +9,21 @@
                         :is="val"
                         :style="{
                             height: visibleHeight + 'px',
-                            width: visibleWidth + 'px'
+                            width: visibleWidth + 'px',
+                            background: `url(/static/img/bg_${index}.png) no-repeat center`,
+                            backgroundSize: 'cover',
+                            backgroundColor: 'darkslategray'
                         }"
                         :ref="`swiperPage${index}`"
                     >
                     </component>
-                    <!-- <div
-                        class="test h-center"
-                        style="background-color:brown;height:100px;width:100px;z-index:10;"
-                    ></div> -->
                 </div>
             </swiper-slide>
         </swiper>
-        <i class="touch-btn" @click="nextPage"></i>
+        <div v-show="isHome" class="dialog">
+            <p>了解更多</p>
+            <div class="touch-btn" @click="nextPage"></div>
+        </div>
     </div>
 </template>
  
@@ -40,6 +42,7 @@ export default {
     data() {
         return {
             swiperPageList: ['pageOne', 'pageTwo', 'pageThree', 'pageFour', 'pageFive', 'pageSix', 'pageSeven', 'pageEight'],
+            isHome: true,
             // swiperPageList: ['pageOne', 'pageOne'],
             visibleHeight: 0,
             visibleWidth: 0,
@@ -55,6 +58,12 @@ export default {
                 height: window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight,
                 resistanceRatio: 0,
                 observeParents: true,
+                on: {
+                    slideChangeTransitionEnd: () => {
+                        this.storeSwitchPageIndex(this.swiper.activeIndex);
+                        console.log(1);
+                    },
+                }
                 // effect: 'flip',
                 // zoom: true,
                 // effect: 'coverflow',
@@ -73,14 +82,19 @@ export default {
         };
     },
     methods: {
+        storeSwitchPageIndex(pageIndex) { // 更改页面索引
+            this.$store.commit('switchPageIndex', { swiperPageIndex: pageIndex })
+        },
         nextPage(e) {
             e.preventDefault();
             this.swiper.slideNext();
+            // this.storeSwitchPageIndex(this.swiper.activeIndex);
         },
     },
     watch: {
         swiperPageIndex(val) {
             console.log(val);
+            this.isHome = (val == 0) ? true : false;
             this.swiper.slideTo(val);
         }
     },
@@ -93,7 +107,6 @@ export default {
         },
     },
     mounted() {
-        // current swiper instance
         console.log('追星启动...');
         let w = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
         let h = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
@@ -105,13 +118,7 @@ export default {
             this.visibleWidth = w;
             this.visibleHeight = w / 750 * 1334;
         }
-        // this.visibleHeight = h;
-        // this.visibleWidth = this.visibleHeight / 1334 * 750;
-        // this.visibleWidth = w;
-        // this.visibleHeight = this.visibleWidth / 750 * 1334;
         console.log(this.visibleHeight)
-        // alert(w +"+"+ h+"\n"+window.innerHeight)
-
     },
     components: {
         pageOne,
@@ -126,81 +133,44 @@ export default {
 };
 </script>
 <style lang="scss">
-.swiper-page-main {
-    // display: flex;
-    // justify-content: center;
+.swiper-slide {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 .page-container {
     position: absolute;
     left: 50%;
     transform: translate(-50%, 0);
-    .bg {
-        // position: absolute;
-        // left: 50%;
-        // transform: translate(-50%, 0);
-        &.bg-one {
-            background: url(../assets/images/bg_one.png) no-repeat center;
-            background-size: cover;
-        }
-        &.bg-two {
-            background: url(../assets/images/bg_two.png) no-repeat center;
-            background-size: cover;
-            background-color: darkslategray;
-        }
-        &.bg-three {
-            background: url(../assets/images/bg_three.png) no-repeat center;
-            background-size: cover;
-            background-color: darkslategray;
-        }
-        &.bg-four {
-            background: url(../assets/images/bg_four.png) no-repeat center;
-            background-size: cover;
-            background-color: darkslategray;
-        }
-        &.bg-five {
-            background: url(../assets/images/bg_five.png) no-repeat center;
-            background-size: cover;
-            background-color: darkslategray;
-        }
-        &.bg-six {
-            background: url(../assets/images/bg_six.png) no-repeat center;
-            background-size: cover;
-            background-color: darkslategray;
-        }
-        &.bg-seven {
-            background: url(../assets/images/bg_seven.png) no-repeat center;
-            background-size: cover;
-            background-color: darkslategray;
-        }
-        &.bg-eight {
-            background: url(../assets/images/bg_eight.png) no-repeat center;
-            background-size: cover;
-            background-color: darkslategray;
-        }
-    }
 }
-
-/* 水平居中 */
-.h-center {
-    position: absolute;
+.dialog {
+    position: fixed;
+    margin-top: -18%;
+    margin-left: -1rem;
     left: 50%;
-    transform: translate(-50%, 0);
+    text-align: center;
+    width: 2rem;
+    height: 10%;
+    z-index: 888;
+    p {
+        font-size: 0.28rem;
+        line-height: 0.56rem;
+    }
+    .touch-btn {
+        position: absolute;
+        width: 0.3rem;
+        height: 0.3rem;
+        margin-left: -0.15rem;
+        left: 50%;
+        background: url(/static/img/touch_btn.png) no-repeat;
+        background-size: contain;
+    }
 }
 
 .title {
     font-size: 0.4rem;
     text-align: center;
-    height: 38%;
+    height: 20%;
     line-height: 3.5rem;
-}
-.touch-btn {
-    position: fixed;
-    width: 0.3rem;
-    height: 0.3rem;
-    margin: -20% 0 0 50%;
-    left: -0.15rem;
-    background: url(../assets/images/music.png) no-repeat;
-    background-size: contain;
-    z-index: 999;
 }
 </style>

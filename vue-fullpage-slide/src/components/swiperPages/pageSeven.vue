@@ -55,19 +55,27 @@ export default {
             font-size: 0.22rem;
         }
         &.content1 {
-            // width: 48%;
-            margin-left: 5%;
+            // margin-top: 32%;
+            // margin-left: 5%;
+            margin-top: 32%;
+            left: 0;
+            width: 48%;
         }
         &.content2 {
-            left: 60%;
+            margin-top: 32%;
+            /* left: 60%; */
+            right: 0;
+            width: 46%;
         }
         &.content3 {
-            margin-left: 2%;
-            margin-top: 58%;
+            margin-top: 90%;
+            left: 0;
+            width: 48%;
         }
         &.content4 {
-            margin-top: 58%;
-            margin-left: 56%;
+            margin-top: 90%;
+            right: 0;
+            width: 46%;
         }
     }
 

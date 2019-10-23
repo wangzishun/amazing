@@ -22,10 +22,10 @@
             </ul>
         </div>
         <div class="nav-bar">
-            <img src="../assets/images/logo.png" alt="" />
+            <img src="/static/img/logo.png" alt="" />
             <i
                 class="nav-btn"
-                :class="[navActionFlag ? 'nav-active' : 'nav-default']"
+                :class="[navActionFlag ? 'nav-default' : 'nav-active']"
                 @click="navAction"
             ></i>
         </div>
@@ -63,10 +63,10 @@ export default {
         position: absolute;
         height: 100%;
         width: 100%;
-        z-index: 888;
+        z-index: 999;
         background: rgba(0, 3, 36, 0.9);
         ul {
-            margin-top: 2.22rem;
+            margin-top: 1.5rem;
             li {
                 text-align: center;
                 font-size: 0.3rem;
@@ -75,32 +75,32 @@ export default {
         }
     }
     .nav-bar {
-        position: absolute;
+        position: fixed;
         height: 1rem;
         width: 100%;
         z-index: 999;
         background: rgba(0, 3, 36, 1);
 
         & > img {
-            position: absolute;
+            float: left;
             width: 1.6rem;
             height: 0.5rem;
-            top: 0.25rem;
-            left: 0.4rem;
+            margin-left: 0.4rem;
+            margin-top: 0.25rem;
         }
         .nav-btn {
-            position: absolute;
+            float: right;
             width: 0.5rem;
             height: 0.5rem;
-            top: 0.25rem;
-            right: 0.4rem;
+            margin-top: 0.25rem;
+            margin-right: 0.4rem;
         }
         .nav-active {
-            background: url(../assets/images/nav_btn_active.png) no-repeat;
+            background: url(/static/img/nav_btn_active.png) no-repeat;
             background-size: contain;
         }
         .nav-default {
-            background: url(../assets/images/nav_btn_default.png) no-repeat;
+            background: url(/static/img/nav_btn_default.png) no-repeat;
             background-size: contain;
         }
     }

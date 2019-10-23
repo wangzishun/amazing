@@ -15,7 +15,6 @@
             <p>全智能</p>
             <span>闪电拍摄，一键上传，<br />平均拍摄一套100㎡房源约10分钟</span>
         </div>
-        <!-- <div class="brackets">asdfasdf</div> -->
     </div>
 </template>
 
@@ -33,17 +32,14 @@ export default {
 <style lang="scss" scoped>
 .content {
     position: absolute;
-    margin-left: 50%;
-    // margin-bottom: 20%;
-    // width: 5rem;
-    // height: 5rem;
-    // background-color: rgba(238, 130, 238, 0.185);
+    margin-left: 52%;
     p {
         font-size: 0.28rem;
         line-height: 0.38rem;
     }
     span {
         display: inline-block;
+        width: 10rem;
         font-size: 0.29rem;
         font-family: PingFang SC;
         font-weight: 300;
@@ -52,16 +48,13 @@ export default {
         overflow: hidden;
     }
     &.content1 {
-        // position: absolute;
-        margin-top: -16%;
+        margin-top: 15.8%;
     }
     &.content2 {
-        // position: absolute;
-        margin-top: 29.2%;
+        margin-top: 61.2%;
     }
     &.content3 {
-        // position: absolute;
-        margin-top: 75.5%;
+        margin-top: 107.5%;
     }
 }
 </style>

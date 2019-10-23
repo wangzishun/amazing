@@ -1,9 +1,5 @@
 <template>
     <div class="show-time">
-        <!-- <div
-            class="test h-center"
-            style="background-color:brown;height:100px;width:100px;z-index:10;"
-        ></div> -->
         <pageNavigation></pageNavigation>
         <pageMain></pageMain>
     </div>
