@@ -6,16 +6,13 @@
         <div
             v-for="(el, i) in contentList"
             :key="i"
-            class="content animated"
+            class="animated"
             :class="[`content${i}`, flag ? 'bounceInDown' : '']"
         >
-            <p>{{ el.title }}</p>
-            <span>{{ el.detail }}</span>
+            <h6>{{ el.title }}</h6>
+            <p>{{ el.detail }}</p>
         </div>
-        <div
-            class="img-content"
-            :class="{ rotate: addAnimation }"
-        ></div>
+        <div class="img-content" :class="{ rotate: addAnimation }"></div>
     </div>
 </template>
 <script>
@@ -45,37 +42,38 @@ export default {
 }
 </script>
 <style lang="scss" scoped>
-.content {
+.content0,
+.content1,
+.content2,
+.content3 {
     position: absolute;
-    width: 100%;
-    p {
+    margin-top: 24.5%;
+    h6 {
         font-size: 0.28rem;
         font-weight: 600;
         color: rgba(148, 255, 245, 1);
         margin-bottom: 0.16rem;
     }
-    span {
+    p {
         font-size: 0.22rem;
         font-weight: 300;
     }
-    &.content0 {
-        margin-top: 22%;
-        margin-left: 10%;
-    }
-    &.content1 {
-        margin-top: 22%;
-        right: 10%;
-        text-align: right;
-    }
-    &.content2 {
-        margin-top: 81%;
-        margin-left: 10%;
-    }
-    &.content3 {
-        margin-top: 81%;
-        right: 10%;
-        text-align: right;
-    }
+}
+.content0 {
+    margin-left: 10%;
+}
+.content1 {
+    right: 10%;
+    text-align: right;
+}
+.content2 {
+    margin-top:82%;
+    margin-left: 10%;
+}
+.content3 {
+    margin-top:82%;
+    right: 10%;
+    text-align: right;
 }
 .img-content {
     height: 34%;

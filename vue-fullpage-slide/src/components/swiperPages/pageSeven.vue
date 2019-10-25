@@ -4,7 +4,7 @@
         <div
             v-for="(el, i) in contentList"
             :key="i"
-            class="content animated"
+            class="animated"
             :class="[
                 `content${i}`,
                 `delay-${i}s`,
@@ -15,10 +15,14 @@
                     : ''
             ]"
         >
-            <p>{{ el.title }}</p>
-            <div>{{ el.detail }}</div>
+            <h6>{{ el.title }}</h6>
+            <p>{{ el.detail }}</p>
         </div>
-        <componentBtn url="#" content="查看拍摄教程"></componentBtn>
+        <componentBtn
+            url="#"
+            content="查看拍摄教程"
+            :call="flag"
+        ></componentBtn>
     </div>
 </template>
 <script>
@@ -52,39 +56,39 @@ export default {
 };
 </script>
 <style lang="scss" scoped>
-.content {
+.content0,
+.content1,
+.content2,
+.content3 {
     position: absolute;
-    p {
+    width: 46%;
+    h6 {
         text-align: center;
         font-size: 0.26rem;
         font-weight: 600;
+        margin-bottom: 0.23rem;
     }
-    div {
+    p {
         text-align: center;
         font-size: 0.22rem;
         font-weight: 300;
-        margin-top: 5%;
     }
-    &.content0 {
-        margin-top: 32%;
-        left: 0;
-        width: 48%;
-    }
-    &.content1 {
-        margin-top: 32%;
-        /* left: 60%; */
-        right: 0;
-        width: 46%;
-    }
-    &.content2 {
-        margin-top: 90%;
-        right: 0;
-        width: 46%;
-    }
-    &.content3 {
-        margin-top: 90%;
-        left: 0;
-        width: 48%;
-    }
+}
+.content0 {
+    margin-top: 32%;
+    left: 0;
+    width: 48%;
+}
+.content1 {
+    margin-top: 32%;
+    right: 0;
+}
+.content2 {
+    margin-top: 90%;
+    right: 0;
+}
+.content3 {
+    margin-top: 90%;
+    left: 0;
 }
 </style>

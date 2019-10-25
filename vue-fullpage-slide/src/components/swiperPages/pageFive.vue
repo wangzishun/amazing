@@ -17,22 +17,26 @@
         </ul>
         <swiper :options="swiperOption" ref="swiperMini" style="">
             <swiper-slide v-for="(content, index) in contentList" :key="index">
-                <div class="content-container">
+                <div class="content-list">
                     <div
-                        v-for="(detail, index) in content"
+                        v-for="(item, index) in content"
                         :key="index"
                         class="content-wrapper"
                     >
-                        <img :src="`/static/img/${detail.img}.png`" alt="" />
-                        <div class="detail">
-                            <p>{{ detail.p }}</p>
-                            <span>{{ detail.span }}</span>
+                        <img :src="`/static/img/${item.img}.png`" alt="" />
+                        <div class="content">
+                            <h6 v-html="item.title"></h6>
+                            <p v-html="item.detail"></p>
                         </div>
                     </div>
                 </div>
             </swiper-slide>
         </swiper>
-        <componentBtn url="#" content="查看线上案例"></componentBtn>
+        <componentBtn
+            url="#"
+            content="查看线上案例"
+            :call="addAnimation"
+        ></componentBtn>
     </div>
 </template>
 <script>
@@ -48,9 +52,7 @@ export default {
             swiperOption: { // swiper选项
                 notNextTick: true, //notNextTick是一个组件自有属性，如果notNextTick设置为true，组件则不会通过NextTick来实例化swiper，也就意味着你可以在第一时间获取到swiper对象，假如你需要刚加载遍使用获取swiper对象来做什么事，那么这个属性一定要是true
                 speed: 500,
-                // direction: 'vertical',
                 setWrapperSize: true,
-                // autoHeight: true,
                 slidesPerView: 1,
                 height: '60%',
                 resistanceRatio: 0,
@@ -63,24 +65,24 @@ export default {
             },
             contentList: [
                 [
-                    { img: 'pic_fwqj_one', p: '沉浸式空间漫游自由行走', span: '3D户型效果图' },
-                    { img: 'pic_fwqj_two', p: '房源标尺空间信息一目了然', span: '房源面积效果图' },
-                    { img: 'pic_fwqj_three', p: '自动AI语音讲房解读更清晰', span: 'AI语音讲房效果图' }
+                    { img: 'pic_fwqj_one', title: '沉浸式空间漫游自由行走&emsp;', detail: '3D户型效果图' },
+                    { img: 'pic_fwqj_two', title: '房源标尺空间信息一目了然', detail: '房源面积效果图' },
+                    { img: 'pic_fwqj_three', title: '自动AI语音讲房解读更清晰', detail: 'AI语音讲房效果图' }
                 ],
                 [
-                    { img: 'pic_xqqj_one', p: '小区航拍展示周边环境', span: '小区航拍效果图' },
-                    { img: 'pic_xqqj_two', p: '小区地拍展示小区内景', span: '小区地拍效果' },
-                    { img: 'pic_xqqj_three', p: '小区内外全景极致体验', span: '小区内外全景效果图' }
+                    { img: 'pic_xqqj_one', title: '小区航拍展示周边环境', detail: '小区航拍效果图' },
+                    { img: 'pic_xqqj_two', title: '小区地拍展示小区内景', detail: '小区地拍效果' },
+                    { img: 'pic_xqqj_three', title: '小区内外全景极致体验', detail: '小区内外全景效果图' }
                 ],
                 [
-                    { img: 'pic_jzjj_one', p: '装修前后对比，要素精准测量', span: '装修对比效果图' },
-                    { img: 'pic_jzjj_two', p: '一键美化，装修家具立体感知', span: '多种装修风格效果图' },
-                    { img: 'pic_jzjj_three', p: '互动体验，空间漫游尽收眼底', span: '全景空间漫游效果图' }
+                    { img: 'pic_jzjj_one', title: '装修前后对比，要素精准测量', detail: '装修对比效果图' },
+                    { img: 'pic_jzjj_two', title: '一键美化，装修家具立体感知', detail: '多种装修风格效果图' },
+                    { img: 'pic_jzjj_three', title: '互动体验，空间漫游尽收眼底', detail: '全景空间漫游效果图' }
                 ],
                 [
-                    { img: 'pic_sydc_one', p: '办公环境体验，活动空间预览', span: '空间预览效果图' },
-                    { img: 'pic_sydc_two', p: '线上带看，提升客户成交效率', span: '线上商铺效果图' },
-                    { img: 'pic_sydc_three', p: '互动体验，空间漫游尽收眼底', span: '全景空间效果图' }
+                    { img: 'pic_sydc_one', title: '办公环境体验，活动空间预览', detail: '空间预览效果图' },
+                    { img: 'pic_sydc_two', title: '线上带看，提升客户成交效率', detail: '线上商铺效果图' },
+                    { img: 'pic_sydc_three', title: '互动体验，空间漫游尽收眼底', detail: '全景空间效果图' }
                 ],
             ]
         }
@@ -95,6 +97,12 @@ export default {
     computed: {
         swiper() {
             return this.$refs.swiperMini.swiper;
+        },
+        addAnimation() {
+            if (this.$store.state.swiperPageIndex == 4) {
+                return true;
+            }
+            return false;
         }
     },
     components: {
@@ -112,10 +120,10 @@ export default {
     li {
         font-size: 0.3rem;
         font-weight: 400;
-        width: 24.5%;
-        text-align: center;
+        width: 1.7rem;
         height: 0.6rem;
         line-height: 0.6rem;
+        text-align: center;
         border-radius: 0.3rem;
         transition: 1s;
         &.active {
@@ -126,29 +134,31 @@ export default {
     }
 }
 .swiper-container {
-    .content-container {
+    margin-top: 0.6rem;
+    .content-list {
         display: flex;
         flex-direction: column;
         .content-wrapper {
             display: flex;
             align-items: center;
             justify-content: center;
-            margin-top: 5%;
+            margin-bottom: 0.4rem;
             img {
-                width: 42%;
-                // height: 2rem;
+                width: 3rem;
+                height: 2rem;
             }
-            p {
+            h6 {
                 font-size: 0.28rem;
                 font-weight: 600;
-                margin-bottom: 10%;
+                margin-bottom: 0.4rem;
             }
-            span {
+            p {
                 font-size: 0.24rem;
                 font-weight: 400;
             }
-            .detail {
-                margin-left: 5%;
+            .content {
+                margin-left: 0.4rem;
+                white-space: nowrap;
                 width: 47%;
             }
         }

@@ -1,7 +1,7 @@
 <template>
     <div class="show-time">
         <pageNavigation></pageNavigation>
-        <pageMain></pageMain>
+        <pageMain :vw="visibleWidth" :vh="visibleHeight"></pageMain>
     </div>
 </template>
 
@@ -13,19 +13,20 @@ export default {
     name: 'showTime',
     data() {
         return {
-            visibleHeight: 0,
             visibleWidth: 0,
+            visibleHeight: 0,
         }
     },
     methods: {
         flexible(window, document) {
+            let _this = this;
             let docEl = document.documentElement
             let dpr = window.devicePixelRatio || 1
 
             // adjust body font size
             function setBodyFontSize() {
                 if (document.body) {
-                    document.body.style.fontSize = (12 * 1) + 'px'
+                    document.body.style.fontSize = (12 * dpr) + 'px'
                 }
                 else {
                     document.addEventListener('DOMContentLoaded', setBodyFontSize)
@@ -45,8 +46,9 @@ export default {
                 }
                 // let rem = docEl.clientWidth / 7.5;
                 docEl.style.fontSize = w / 7.5 + 'px';
-                this.visibleWidth = w;
-                this.visibleHeight = h;
+                _this.visibleWidth = w;
+                _this.visibleHeight = h;
+                console.log(w, h);
             }
 
             setRemUnit()
@@ -106,7 +108,6 @@ export default {
 
     created() {
         this.flexible(window, document);
-        // window, window.lib || (window.lib = {})
         // this.rem(window, window.lib || (window.lib = {}))
     },
     components: {

@@ -1,12 +1,12 @@
 <template>
-    <span
+    <div
         ref="numberRun"
         :data-time="time"
-        class="number-grow"
+        class="number-run"
         :data-value="value"
     >
         0
-    </span>
+    </div>
 </template>
 
 <script>
@@ -75,15 +75,4 @@ export default {
 }
 </script>
 <style lang="scss">
-.number-grow-warp {
-    position: fixed;
-    z-index: 9999;
-    top: 0%;
-    margin-top: 20%;
-    .number-grow {
-        font-size: 1rem;
-        color: #ffaf00;
-        display: block;
-    }
-}
 </style>

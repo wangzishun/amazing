@@ -10,6 +10,7 @@
         <componentBtn
             url=""
             content="免费报名"
+            :call="addAnimation"
             :style="btnStyle"
         ></componentBtn>
     </div>
@@ -30,7 +31,12 @@ export default {
         }
     },
     computed: {
-
+        addAnimation() {
+            if (this.$store.state.swiperPageIndex == 7) {
+                return true;
+            }
+            return false;
+        }
     },
     components: {
         componentBtn,
@@ -45,9 +51,8 @@ export default {
     text-align: center;
     font-size: 0.22rem;
     font-weight: 300;
-    height: 6%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
+    p {
+        margin-bottom: 0.19rem;
+    }
 }
 </style>

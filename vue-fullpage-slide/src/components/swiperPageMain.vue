@@ -8,8 +8,8 @@
                         :class="{ animated: flag, fadeIn: flag, slower: flag }"
                         :is="val"
                         :style="{
-                            height: visibleHeight + 'px',
-                            width: visibleWidth + 'px',
+                            width: vw + 'px',
+                            height: vh + 'px',
                             background: `url(/static/img/bg_${index}.png) no-repeat center`,
                             backgroundSize: 'cover',
                             backgroundColor: '#051031'
@@ -20,10 +20,7 @@
                 </div>
             </swiper-slide>
         </swiper>
-        <div
-            class="dialog animated"
-            :class="{ bounceIn: isHome, bounceOut: !isHome }"
-        >
+        <div class="dialog animated" :class="[isHome ? 'heartBeat' : 'zoomOut']">
             <p>了解更多</p>
             <div class="touch-btn" @click="nextPage"></div>
         </div>
@@ -42,12 +39,15 @@ import pageEight from '@/components/swiperPages/pageEight';
 
 export default {
     name: 'swiperPageMain',
+    props: [
+        'vw',
+        'vh'
+    ],
     data() {
         return {
             swiperPageList: ['pageOne', 'pageTwo', 'pageThree', 'pageFour', 'pageFive', 'pageSix', 'pageSeven', 'pageEight'],
             isHome: true,
-            visibleHeight: 0,
-            visibleWidth: 0,
+
             swiperOption: { // swiper选项
                 notNextTick: true, //notNextTick是一个组件自有属性，如果notNextTick设置为true，组件则不会通过NextTick来实例化swiper，也就意味着你可以在第一时间获取到swiper对象，假如你需要刚加载遍使用获取swiper对象来做什么事，那么这个属性一定要是true
                 speed: 500,
@@ -98,17 +98,6 @@ export default {
     },
     mounted() {
         console.log('追星启动...');
-        let w = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
-        let h = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
-        let flag = (w / h) > (750 / 1334);
-        if (flag) {
-            this.visibleHeight = h;
-            this.visibleWidth = h / 1334 * 750;
-        } else {
-            this.visibleWidth = w;
-            this.visibleHeight = w / 750 * 1334;
-        }
-        console.log(this.visibleHeight)
     },
     components: {
         pageOne,

@@ -1,5 +1,5 @@
 <template>
-    <a :href="url">
+    <a :href="url" class="animated" :class="{ 'wobble': call }">
         {{ content }}
         <div class="btn-bg"></div>
     </a>
@@ -7,12 +7,7 @@
 
 <script>
 export default {
-    props: ['url', 'content'],
-    data() {
-        return {
-
-        }
-    }
+    props: ['url', 'content', 'call'],
 }
 </script>
 
@@ -28,7 +23,7 @@ a {
     position: absolute;
     top: 85%;
     left: 50%;
-    transform: translateX(-50%);
+    margin-left: -1.31rem;
     font-size: 0.26rem;
     font-weight: 600;
     color: rgba(255, 255, 255, 1);
