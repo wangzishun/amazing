@@ -7,8 +7,9 @@
             class="content animated"
             :class="[
                 `content${i}`,
+                `delay-${i}s`,
                 addAnimation
-                    ? i % 2 == 0
+                    ? i == 0 || i == 3
                         ? 'slideInLeft'
                         : 'slideInRight'
                     : ''
@@ -30,8 +31,8 @@ export default {
             contentList: [
                 { title: '移动经纪人app', detail: '登陆后进入发现 > 全景管理' },
                 { title: '拍摄全景', detail: '上传至后台并且关联房源' },
-                { title: '付费3D拼接', detail: '购买拼接券进行3D户型拼接' },
                 { title: '前台展示', detail: '【安居客&58】展示3D全景房源' },
+                { title: '付费3D拼接', detail: '购买拼接券进行3D户型拼接' },
             ]
         };
     },
@@ -65,8 +66,6 @@ export default {
         margin-top: 5%;
     }
     &.content0 {
-        // margin-top: 32%;
-        // margin-left: 5%;
         margin-top: 32%;
         left: 0;
         width: 48%;
@@ -79,13 +78,13 @@ export default {
     }
     &.content2 {
         margin-top: 90%;
-        left: 0;
-        width: 48%;
+        right: 0;
+        width: 46%;
     }
     &.content3 {
         margin-top: 90%;
-        right: 0;
-        width: 46%;
+        left: 0;
+        width: 48%;
     }
 }
 </style>

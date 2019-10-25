@@ -11,6 +11,12 @@ import pageNavigation from "@/components/swiperPageNavigation.vue";
 
 export default {
     name: 'showTime',
+    data() {
+        return {
+            visibleHeight: 0,
+            visibleWidth: 0,
+        }
+    },
     methods: {
         flexible(window, document) {
             let docEl = document.documentElement
@@ -27,10 +33,20 @@ export default {
             }
             setBodyFontSize();
 
-            // set 1rem = viewWidth / 10
+            // set 1rem = viewWidth / 7.5
             function setRemUnit() {
-                let rem = docEl.clientWidth / 10
-                docEl.style.fontSize = rem + 'px'
+                let w = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+                let h = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
+                let aspectRatio = 750 / 1334; //宽高比
+                if ((w / h) > aspectRatio) {
+                    w = h * aspectRatio;
+                } else {
+                    h = w / aspectRatio;
+                }
+                // let rem = docEl.clientWidth / 7.5;
+                docEl.style.fontSize = w / 7.5 + 'px';
+                this.visibleWidth = w;
+                this.visibleHeight = h;
             }
 
             setRemUnit()
@@ -89,9 +105,9 @@ export default {
     },
 
     created() {
-        // this.flexible(window, document);
+        this.flexible(window, document);
         // window, window.lib || (window.lib = {})
-        this.rem(window, window.lib || (window.lib = {}))
+        // this.rem(window, window.lib || (window.lib = {}))
     },
     components: {
         pageMain,
@@ -104,6 +120,6 @@ export default {
 html {
 }
 .show-time {
-    background-color:#051031;
+    background-color: #051031;
 }
 </style>
