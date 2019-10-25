@@ -12,7 +12,7 @@
                             width: visibleWidth + 'px',
                             background: `url(/static/img/bg_${index}.png) no-repeat center`,
                             backgroundSize: 'cover',
-                            backgroundColor: 'darkslategray'
+                            backgroundColor: '#051031'
                         }"
                         :ref="`swiperPage${index}`"
                     >
@@ -20,7 +20,10 @@
                 </div>
             </swiper-slide>
         </swiper>
-        <div v-show="isHome" class="dialog">
+        <div
+            class="dialog animated"
+            :class="{ bounceIn: isHome, bounceOut: !isHome }"
+        >
             <p>了解更多</p>
             <div class="touch-btn" @click="nextPage"></div>
         </div>
@@ -43,12 +46,11 @@ export default {
         return {
             swiperPageList: ['pageOne', 'pageTwo', 'pageThree', 'pageFour', 'pageFive', 'pageSix', 'pageSeven', 'pageEight'],
             isHome: true,
-            // swiperPageList: ['pageOne', 'pageOne'],
             visibleHeight: 0,
             visibleWidth: 0,
             swiperOption: { // swiper选项
                 notNextTick: true, //notNextTick是一个组件自有属性，如果notNextTick设置为true，组件则不会通过NextTick来实例化swiper，也就意味着你可以在第一时间获取到swiper对象，假如你需要刚加载遍使用获取swiper对象来做什么事，那么这个属性一定要是true
-                // speed: 500,
+                speed: 500,
                 direction: 'vertical',
                 setWrapperSize: true,
                 autoHeight: true,
@@ -59,21 +61,10 @@ export default {
                 resistanceRatio: 0,
                 observeParents: true,
                 on: {
-                    slideChangeTransitionEnd: () => {
+                    slideChangeTransitionStart: () => {
                         this.storeSwitchPageIndex(this.swiper.activeIndex);
                     },
                 }
-                // effect: 'flip',
-                // zoom: true,
-                // effect: 'coverflow',
-                // coverflowEffect: {
-                //     rotate: 80,
-                //     stretch: 100,
-                //     depth: 100,
-                //     modifier: 1,
-                //     // slideShadows: true
-                // },
-
 
             },
             flag: false,

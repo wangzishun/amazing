@@ -17,29 +17,42 @@
             >
                 <div>
                     <img v-if="item.showImg" src="/static/img/rise.png" />
-                    {{ item.num }}
+                    <numberRun
+                        :value="item.num"
+                        :sign="item.sign"
+                        :run="addAnimation"
+                    ></numberRun>
                 </div>
                 <span>{{ item.detail }}</span>
             </div>
         </div>
-        <div v-for="el in 4" :key="el" class="ripple" :class="{}"></div>
+        <div v-for="el in 4" :key="el" class="" :class="[`ripple${el}`]"></div>
     </div>
 </template>
 <script>
+import numberRun from "@/components/componentNumberRun";
+
 export default {
     name: 'swiperPageThree',
     data() {
         return {
-            // flag: true
             numberList: [
-                [{ num: '350%', detail: '房均点击量', showImg: true }, { num: '130%', detail: '房均停留时长', showImg: true }, { num: '40%', detail: '用户返回率', showImg: true }],
-                [{ num: '500+', detail: '覆盖城市', showImg: false }, { num: '34000+', detail: '覆盖经纪门店', showImg: false },],
-                [{ num: '10000+', detail: '合作经济公司', showImg: false }, { num: '400000+', detail: '服务经纪人量', showImg: false }],
+                [{ num: 350, detail: '房均点击量', sign: '%', showImg: true }, { num: 130, detail: '房均停留时长', sign: '%', showImg: true }, { num: 40, detail: '用户返回率', sign: '%', showImg: true }],
+                [{ num: 500, detail: '覆盖城市', sign: '+', showImg: false }, { num: 34000, detail: '覆盖经纪门店', sign: '+', showImg: false },],
+                [{ num: 10000, detail: '合作经济公司', sign: '+', showImg: false }, { num: 400000, detail: '服务经纪人量', sign: '+', showImg: false }],
             ]
         }
     },
     computed: {
-
+        addAnimation() {
+            if (this.$store.state.swiperPageIndex == 2) {
+                return true;
+            }
+            return false;
+        }
+    },
+    components: {
+        numberRun,
     }
 }
 </script>
@@ -53,13 +66,15 @@ export default {
     .number {
         display: inline-block;
         & > div {
-            font-family: Avenir;
-            font-weight: 900;
-            font-size: 0.44rem;
             margin-bottom: 5%;
             img {
                 width: 0.31rem;
                 height: 0.33rem;
+            }
+            span {
+                font-family: Avenir;
+                font-weight: 900;
+                font-size: 0.44rem;
             }
         }
 
@@ -104,9 +119,10 @@ export default {
     }
 }
 
-.ripple {
-    margin: auto;
-    margin-top: 5rem;
+.ripple1,
+.ripple2,
+.ripple3,
+.ripple4 {
     background-color: #94fff5;
     width: 0.2rem;
     height: 0.2rem;
@@ -129,7 +145,22 @@ export default {
         animation: ripple 2s linear infinite 1s;
     }
 }
-
+.ripple1 {
+    margin-top: -30%;
+    margin-left: 6%;
+}
+.ripple2 {
+    margin-top: -43%;
+    margin-left: 33%;
+}
+.ripple3 {
+    margin-top: -27%;
+    margin-left: 59%;
+}
+.ripple4 {
+    margin-top: -42%;
+    margin-left: 87%;
+}
 @keyframes ripple {
     0% {
         box-shadow: 0 0 0 0.2rem rgba(148, 255, 245, 0.2);

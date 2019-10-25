@@ -7,7 +7,8 @@
             <li
                 v-for="(el, index) in directive"
                 :key="index"
-                :class="{ active: directiveActive }"
+                class="animated"
+                :class="[directiveActive == index ? 'active pulse' : '']"
                 @click="swiperMiniChange(index)"
                 :style="{}"
             >
@@ -42,7 +43,7 @@ export default {
     data() {
         return {
             flag: true,
-            directiveActive: true,
+            directiveActive: 0,
             directive: ['房屋全景', '小区全景', '家装/家居', '商业地产'],
             swiperOption: { // swiper选项
                 notNextTick: true, //notNextTick是一个组件自有属性，如果notNextTick设置为true，组件则不会通过NextTick来实例化swiper，也就意味着你可以在第一时间获取到swiper对象，假如你需要刚加载遍使用获取swiper对象来做什么事，那么这个属性一定要是true
@@ -54,6 +55,11 @@ export default {
                 height: '60%',
                 resistanceRatio: 0,
                 observeParents: true,
+                on: {
+                    slideChange: () => {
+                        this.swiperMiniChange(this.swiper.activeIndex);
+                    },
+                }
             },
             contentList: [
                 [
@@ -82,7 +88,7 @@ export default {
     methods: {
         swiperMiniChange(index) {
             console.log('swiper to ' + index);
-
+            this.directiveActive = index;
             this.swiper.slideTo(index);
         }
     },
@@ -102,11 +108,21 @@ export default {
     display: flex;
     justify-content: space-evenly;
     width: 100%;
-    height: 5%;
-    line-height: 0.6rem;
+
     li {
         font-size: 0.3rem;
         font-weight: 400;
+        width: 24.5%;
+        text-align: center;
+        height: 0.6rem;
+        line-height: 0.6rem;
+        border-radius: 0.3rem;
+        transition: 1s;
+        &.active {
+            background-color: rgba(69, 135, 255, 1);
+            border-color: rgba(69, 135, 255, 0.8);
+            box-shadow: 0rem 0.05rem 0.3rem rgba(69, 135, 255, 0.6);
+        }
     }
 }
 .swiper-container {
@@ -125,10 +141,15 @@ export default {
             p {
                 font-size: 0.28rem;
                 font-weight: 600;
+                margin-bottom: 10%;
             }
             span {
                 font-size: 0.24rem;
                 font-weight: 400;
+            }
+            .detail {
+                margin-left: 5%;
+                width: 47%;
             }
         }
     }

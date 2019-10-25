@@ -3,23 +3,19 @@
         <div class="title">
             专属服务
         </div>
-        <div class="content content1">
-            <p>经纪公司</p>
-            <span>自主拍摄&上传</span>
+        <div
+            v-for="(el, i) in contentList"
+            :key="i"
+            class="content animated"
+            :class="[`content${i}`, flag ? 'bounceInDown' : '']"
+        >
+            <p>{{ el.title }}</p>
+            <span>{{ el.detail }}</span>
         </div>
-        <div class="content content2">
-            <p>平台</p>
-            <span>有偿拼接3D户型</span>
-        </div>
-        <div class="content content3">
-            <p>公司</p>
-            <span>API对接，全网展示</span>
-        </div>
-        <div class="content content4">
-            <p>平台摄影师</p>
-            <span>付费拍摄效率翻倍</span>
-        </div>
-        <img src="/static/img/dynamic.png" alt="" />
+        <div
+            class="img-content"
+            :class="{ rotate: addAnimation }"
+        ></div>
     </div>
 </template>
 <script>
@@ -27,11 +23,24 @@ export default {
     name: 'swiperPageFour',
     data() {
         return {
-            flag: true
+            flag: false,
+            contentList: [
+                { title: '经纪公司', detail: '自主拍摄&上传' },
+                { title: '平台', detail: '有偿拼接3D户型' },
+                { title: '公司', detail: 'API对接，全网展示' },
+                { title: '平台摄影师', detail: '付费拍摄效率翻倍' },
+            ]
         }
     },
     computed: {
-
+        addAnimation() {
+            if (this.$store.state.swiperPageIndex == 3) {
+                this.flag = true;
+                return true;
+            }
+            this.flag = false;
+            return false;
+        }
     }
 }
 </script>
@@ -49,29 +58,44 @@ export default {
         font-size: 0.22rem;
         font-weight: 300;
     }
-    &.content1 {
+    &.content0 {
         margin-top: 22%;
         margin-left: 10%;
     }
-    &.content2 {
+    &.content1 {
         margin-top: 22%;
-        left: 70%;
+        right: 10%;
+        text-align: right;
+    }
+    &.content2 {
+        margin-top: 81%;
+        margin-left: 10%;
     }
     &.content3 {
         margin-top: 81%;
-        margin-left: 10%;
-    }
-    &.content4 {
-        margin-top: 81%;
-        margin-left: 70%;
+        right: 10%;
+        text-align: right;
     }
 }
+.img-content {
+    height: 34%;
+    margin-top: 26%;
+    background: url(/static/img/dynamic.png) no-repeat center;
+    background-size: contain;
+}
 
-img {
-    position: absolute;
-    height: 31.5%;
-    left: 50%;
-    top: 35.5%;
-    transform: translate(-50%, 0);
+.rotate {
+    animation: rotating-box 1.5s ease-in-out;
+}
+@keyframes rotating-box {
+    0% {
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+
+    100% {
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
 }
 </style>

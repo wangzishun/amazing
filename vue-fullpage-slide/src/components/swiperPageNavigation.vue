@@ -24,8 +24,8 @@
         <div class="nav-bar">
             <img src="/static/img/logo.png" alt="" />
             <i
-                class="nav-btn"
-                :class="[navActionFlag ? 'nav-default' : 'nav-active']"
+                class="nav-btn animated"
+                :class="[navActionFlag ? 'nav-default bounceIn' : 'nav-active flipInY',]"
                 @click="navAction"
             ></i>
         </div>

@@ -9,6 +9,7 @@
             <span>Theta SC</span>
             <span>Theta V</span>
         </div>
+        <img src="/static/img/camera.png" class="camera" />
         <div class="detail detail1">
             <p>【理光相机支持型号】</p>
             <span>Theta Z1、Theta SC、Theta V</span>
@@ -22,16 +23,17 @@
             <span>含黄色底座</span>
             <span>搭配相机使用</span>
         </div>
+        <img src="/static/img/tripod.png" class="tripod" />
         <div class="detail detail2">
             <p>【三脚架支持类型】</p>
-            <span>希迅三脚架</span>
+            <span>希迅三脚架&ensp;</span>
             <p>【支架建议购买地址】</p>
             <span>打开京东&gt;搜索店铺“亦我数码”</span>
             <span>选择“三脚架”</span>
         </div>
-        <span class="note"
-            >注：经纪人/公司自行购买专业理光相机设备自主完成拍摄并上传</span
-        >
+        <span class="note">
+            注：经纪人/公司自行购买专业理光相机设备自主完成拍摄并上传
+        </span>
     </div>
 </template>
 <script>
@@ -114,12 +116,24 @@ export default {
     }
     &.feature1 {
         margin-top: 21%;
-        margin-left: 10%;
+        margin-left: 8%;
     }
     &.feature2 {
-        margin-left: 67%;
-        margin-top: 83.5%;
+        margin-left: 65%;
+        margin-top: 83%;
     }
+}
+.camera {
+    position: absolute;
+    width: 12.6%;
+    margin-top: 13%;
+    margin-left: 32%;
+}
+.tripod {
+    position: absolute;
+    width: 13.4%;
+    margin-top: 74%;
+    margin-left: 52%;
 }
 .note {
     position: absolute;
@@ -128,7 +142,7 @@ export default {
     text-align: center;
     font-size: 0.22rem;
     font-weight: 400;
-    color:rgba(255,255,255,1);
+    color: rgba(255, 255, 255, 1);
 }
 
 p {

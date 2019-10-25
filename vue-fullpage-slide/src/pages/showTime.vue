@@ -19,13 +19,13 @@ export default {
             // adjust body font size
             function setBodyFontSize() {
                 if (document.body) {
-                    document.body.style.fontSize = (12 * dpr) + 'px'
+                    document.body.style.fontSize = (12 * 1) + 'px'
                 }
                 else {
                     document.addEventListener('DOMContentLoaded', setBodyFontSize)
                 }
             }
-            // setBodyFontSize();
+            setBodyFontSize();
 
             // set 1rem = viewWidth / 10
             function setRemUnit() {
@@ -44,17 +44,17 @@ export default {
             })
 
             // detect 0.5px supports
-            if (dpr >= 2) {
-                let fakeBody = document.createElement('body')
-                let testElement = document.createElement('div')
-                testElement.style.border = '.5px solid transparent'
-                fakeBody.appendChild(testElement)
-                docEl.appendChild(fakeBody)
-                if (testElement.offsetHeight === 1) {
-                    docEl.classList.add('hairlines')
-                }
-                docEl.removeChild(fakeBody)
-            }
+            // if (dpr >= 2) {
+            //     let fakeBody = document.createElement('body')
+            //     let testElement = document.createElement('div')
+            //     testElement.style.border = '.5px solid transparent'
+            //     fakeBody.appendChild(testElement)
+            //     docEl.appendChild(fakeBody)
+            //     if (testElement.offsetHeight === 1) {
+            //         docEl.classList.add('hairlines')
+            //     }
+            //     docEl.removeChild(fakeBody)
+            // }
         },
         rem(e, t) {
             function n() {
@@ -102,9 +102,8 @@ export default {
 
 <style>
 html {
-    /* font-size: 62.5%; */
 }
 .show-time {
-    background-color:tomato;
+    background-color:#051031;
 }
 </style>
