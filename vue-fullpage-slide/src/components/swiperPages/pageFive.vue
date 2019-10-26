@@ -1,35 +1,29 @@
 <template>
-    <div class="bg bg-five">
-        <div class="title">
-            行业应用
-        </div>
+    <main>
+        <h1>行业应用</h1>
         <ul class="directive-container">
             <li
                 v-for="(el, index) in directive"
                 :key="index"
-                class="animated"
-                :class="[directiveActive == index ? 'active pulse' : '']"
+                :class="[
+                    directiveActive == index ? 'animated active pulse' : ''
+                ]"
                 @click="swiperMiniChange(index)"
-                :style="{}"
             >
                 {{ el }}
             </li>
         </ul>
         <swiper :options="swiperOption" ref="swiperMini" style="">
             <swiper-slide v-for="(content, index) in contentList" :key="index">
-                <div class="content-list">
-                    <div
-                        v-for="(item, index) in content"
-                        :key="index"
-                        class="content-wrapper"
-                    >
+                <article>
+                    <section v-for="(item, index) in content" :key="index">
                         <img :src="`/static/img/${item.img}.png`" alt="" />
                         <div class="content">
                             <h6 v-html="item.title"></h6>
                             <p v-html="item.detail"></p>
                         </div>
-                    </div>
-                </div>
+                    </section>
+                </article>
             </swiper-slide>
         </swiper>
         <componentBtn
@@ -37,7 +31,7 @@
             content="查看线上案例"
             :call="addAnimation"
         ></componentBtn>
-    </div>
+    </main>
 </template>
 <script>
 import componentBtn from '@/components/componentButton'
@@ -124,9 +118,9 @@ export default {
         height: 0.6rem;
         line-height: 0.6rem;
         text-align: center;
-        border-radius: 0.3rem;
         transition: 1s;
         &.active {
+            border-radius: 0.3rem;
             background-color: rgba(69, 135, 255, 1);
             border-color: rgba(69, 135, 255, 0.8);
             box-shadow: 0rem 0.05rem 0.3rem rgba(69, 135, 255, 0.6);
@@ -135,10 +129,10 @@ export default {
 }
 .swiper-container {
     margin-top: 0.6rem;
-    .content-list {
+    article {
         display: flex;
         flex-direction: column;
-        .content-wrapper {
+        section {
             display: flex;
             align-items: center;
             justify-content: center;
@@ -147,19 +141,19 @@ export default {
                 width: 3rem;
                 height: 2rem;
             }
-            h6 {
-                font-size: 0.28rem;
-                font-weight: 600;
-                margin-bottom: 0.4rem;
-            }
-            p {
-                font-size: 0.24rem;
-                font-weight: 400;
-            }
             .content {
                 margin-left: 0.4rem;
                 white-space: nowrap;
                 width: 47%;
+                h6 {
+                    font-size: 0.28rem;
+                    font-weight: 600;
+                    margin-bottom: 0.4rem;
+                }
+                p {
+                    font-size: 0.24rem;
+                    font-weight: 400;
+                }
             }
         }
     }

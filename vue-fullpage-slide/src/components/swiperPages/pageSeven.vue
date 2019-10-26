@@ -1,12 +1,12 @@
 <template>
-    <div class="bg bg-seven">
-        <div class="title">拍摄流程</div>
-        <div
+    <main>
+        <h1>拍摄流程</h1>
+        <article
             v-for="(el, i) in contentList"
             :key="i"
-            class="animated"
             :class="[
-                `content${i}`,
+                'animated',
+                `article${i}`,
                 `delay-${i}s`,
                 addAnimation
                     ? i == 0 || i == 3
@@ -17,13 +17,13 @@
         >
             <h6>{{ el.title }}</h6>
             <p>{{ el.detail }}</p>
-        </div>
+        </article>
         <componentBtn
             url="#"
             content="查看拍摄教程"
             :call="flag"
         ></componentBtn>
-    </div>
+    </main>
 </template>
 <script>
 import componentBtn from "@/components/componentButton";
@@ -56,10 +56,7 @@ export default {
 };
 </script>
 <style lang="scss" scoped>
-.content0,
-.content1,
-.content2,
-.content3 {
+article {
     position: absolute;
     width: 46%;
     h6 {
@@ -74,20 +71,20 @@ export default {
         font-weight: 300;
     }
 }
-.content0 {
+.article0 {
     margin-top: 32%;
     left: 0;
     width: 48%;
 }
-.content1 {
+.article1 {
     margin-top: 32%;
     right: 0;
 }
-.content2 {
+.article2 {
     margin-top: 90%;
     right: 0;
 }
-.content3 {
+.article3 {
     margin-top: 90%;
     left: 0;
 }

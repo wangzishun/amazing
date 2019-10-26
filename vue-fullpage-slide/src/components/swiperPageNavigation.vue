@@ -1,15 +1,12 @@
 
 
 <template>
-    <div class="page-navigation">
-        <div
-            class="nav-container animated"
-            :class="{
-                slideInDown: navActionFlag,
-                fast: navActionFlag,
-                slideOutUp: !navActionFlag,
-                faster: !navActionFlag
-            }"
+    <nav>
+        <section
+            :class="[
+                'animated',
+                navActionFlag ? 'slideInDown fast' : 'slideOutUp faster'
+            ]"
         >
             <ul>
                 <li
@@ -20,27 +17,27 @@
                     {{ val }}
                 </li>
             </ul>
-        </div>
-        <div class="nav-bar">
+        </section>
+        <header>
             <img src="/static/img/logo.png" alt="" />
             <i
-                class="nav-btn animated"
-                :class="[navActionFlag ? 'nav-default bounceIn' : 'nav-active flipInY',]"
+                :class="[
+                    'animated',
+                    navActionFlag
+                        ? 'nav-default bounceIn'
+                        : 'nav-active flipInY'
+                ]"
                 @click="navAction"
             ></i>
-        </div>
-    </div>
+        </header>
+    </nav>
 </template>
-
 <script>
-
 export default {
     name: 'pageNavigation',
     data() {
         return {
             navActionFlag: false,
-            // navSlideDown: 'animated slideInDown',
-            // navSlideUp: 'animated slideInDown'
             navList: ['首页', '品牌优势', '全景效果', '专属服务', '行业应用', '全景拍摄', '拍摄流程', '合作伙伴'],
         }
     },
@@ -58,8 +55,8 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.page-navigation {
-    .nav-container {
+nav {
+    section {
         position: absolute;
         height: 100%;
         width: 100%;
@@ -74,21 +71,21 @@ export default {
             }
         }
     }
-    .nav-bar {
+    header {
         position: fixed;
         height: 1rem;
         width: 100%;
         z-index: 999;
         background: rgba(0, 3, 36, 1);
 
-        & > img {
+        img {
             float: left;
             width: 1.6rem;
             height: 0.5rem;
             margin-left: 0.4rem;
             margin-top: 0.25rem;
         }
-        .nav-btn {
+        i {
             float: right;
             width: 0.5rem;
             height: 0.5rem;

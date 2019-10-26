@@ -1,35 +1,32 @@
 <template>
-    <div class="bg bg-three">
-        <div class="title">
-            全景效果
-        </div>
-        <div
+    <main>
+        <h1>全景效果</h1>
+        <article
             v-for="(number, i) in numberList"
-            :key="`container${i}`"
-            :class="`container${i}`"
+            :key="`article${i}`"
+            :class="`article${i}`"
         >
-            <div
-                class="number"
+            <section
                 v-for="(item, j) in number"
                 :key="`number${j}`"
                 :class="`number${j}`"
             >
                 <img v-if="item.showImg" src="/static/img/rise.png" />
                 <numberRun
+                    class="number-run"
                     :value="item.num"
                     :sign="item.sign"
                     :run="addAnimation"
                 ></numberRun>
-                <p>{{ item.detail }}</p>
-            </div>
-        </div>
+                <h6>{{ item.detail }}</h6>
+            </section>
+        </article>
         <div
             v-for="el in 4"
             :key="el"
-            class=""
             :class="[`ripple${el}`, ripple == el ? 'active' : '']"
         ></div>
-    </div>
+    </main>
 </template>
 <script>
 import numberRun from "@/components/componentNumberRun";
@@ -60,9 +57,6 @@ export default {
                 return true;
             }
             return false;
-
-
-
         }
     },
     components: {
@@ -71,22 +65,20 @@ export default {
 }
 </script>
 <style lang="scss" scoped>
-.container0,
-.container1,
-.container2 {
+article {
     width: 100%;
     height: 20%;
     display: flex;
     justify-content: center;
     align-items: center;
-    .number {
+    section {
         display: inline-block;
         img {
             display: inline;
             width: 0.31rem;
             height: 0.33rem;
         }
-        p {
+        h6 {
             font-weight: 300;
             font-size: 0.22rem;
             width: 100%;
@@ -100,39 +92,37 @@ export default {
         }
     }
 }
-.container0 {
+.article0 {
     height: 29%;
-
-    .number {
+    section {
         width: 30%;
         text-align: center;
-        p {
+        h6 {
             margin-top: 0.1rem;
         }
     }
 }
-.container1 {
-    .number {
+.article1 {
+    section {
         width: 47%;
-    }
-    .number0 {
-        margin-top: 10%;
-    }
-    .number1 {
-        margin-top: 20%;
+        &.number0 {
+            margin-top: 10%;
+        }
+        &.number1 {
+            margin-top: 20%;
+        }
     }
 }
-.container2 {
+.article2 {
     justify-content: flex-end;
-    .number {
-        height: 20%;
-    }
-    .number0 {
-        width: 48%;
-        margin-top: -15%;
-    }
-    .number1 {
-        width: 25%;
+    section {
+        &.number0 {
+            width: 48%;
+            margin-top: -15%;
+        }
+        &.number1 {
+            width: 25%;
+        }
     }
 }
 

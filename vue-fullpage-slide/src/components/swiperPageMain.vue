@@ -20,7 +20,10 @@
                 </div>
             </swiper-slide>
         </swiper>
-        <div class="dialog animated" :class="[isHome ? 'heartBeat' : 'zoomOut']">
+        <div
+            class="dialog animated"
+            :class="[isHome ? 'heartBeat' : 'zoomOut']"
+        >
             <p>了解更多</p>
             <div class="touch-btn" @click="nextPage"></div>
         </div>
@@ -124,7 +127,7 @@ export default {
 }
 .dialog {
     position: fixed;
-    margin-top: -18%;
+    bottom: 8%;
     margin-left: -1rem;
     left: 50%;
     text-align: center;
@@ -146,7 +149,8 @@ export default {
     }
 }
 
-.title {
+.title,
+h1 {
     font-size: 0.4rem;
     text-align: center;
     height: 20%;

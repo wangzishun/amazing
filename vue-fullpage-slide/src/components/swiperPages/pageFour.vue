@@ -1,19 +1,16 @@
 <template>
-    <div class="bg bg-four">
-        <div class="title">
-            专属服务
-        </div>
-        <div
+    <main>
+        <h1>专属服务</h1>
+        <section
             v-for="(el, i) in contentList"
             :key="i"
-            class="animated"
-            :class="[`content${i}`, flag ? 'bounceInDown' : '']"
+            :class="['animated', `section${i}`, flag ? 'bounceInDown' : '']"
         >
             <h6>{{ el.title }}</h6>
             <p>{{ el.detail }}</p>
-        </div>
+        </section>
         <div class="img-content" :class="{ rotate: addAnimation }"></div>
-    </div>
+    </main>
 </template>
 <script>
 export default {
@@ -42,10 +39,7 @@ export default {
 }
 </script>
 <style lang="scss" scoped>
-.content0,
-.content1,
-.content2,
-.content3 {
+section {
     position: absolute;
     margin-top: 24.5%;
     h6 {
@@ -59,19 +53,19 @@ export default {
         font-weight: 300;
     }
 }
-.content0 {
+.section0 {
     margin-left: 10%;
 }
-.content1 {
+.section1 {
     right: 10%;
     text-align: right;
 }
-.content2 {
-    margin-top:82%;
+.section2 {
+    margin-top: 82%;
     margin-left: 10%;
 }
-.content3 {
-    margin-top:82%;
+.section3 {
+    margin-top: 82%;
     right: 10%;
     text-align: right;
 }

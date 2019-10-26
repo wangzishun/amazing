@@ -1,18 +1,16 @@
 <template>
-    <div class="bg bg-two">
-        <div class="title">
-            品牌优势
-        </div>
-        <div
+    <main>
+        <h1>品牌优势</h1>
+        <section
             v-for="(el, i) in contentList"
             :key="i"
-            class="content animated"
-            :class="[`content${i}`, addAnimation ? 'fadeInDown' : '']"
+            class="animated"
+            :class="[`section${i}`, addAnimation ? 'fadeInDown' : '']"
         >
-            <div v-html="el.title"></div>
+            <h3 v-html="el.title"></h3>
             <p v-html="el.detail1"></p>
-        </div>
-    </div>
+        </section>
+    </main>
 </template>
 
 <script>
@@ -39,11 +37,11 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.content {
+section {
     position: absolute;
     right: 0;
     width: 55%;
-    & > div {
+    h3 {
         font-size: 0.28rem;
         line-height: 0.9rem;
         background: url(/static/img/icon_title.png) no-repeat;
@@ -61,14 +59,14 @@ export default {
         color: #a5d3ff;
         line-height: 0.43rem;
     }
-    &.content0 {
-        margin-top: 10%;
-    }
-    &.content1 {
-        margin-top: 56%;
-    }
-    &.content2 {
-        margin-top: 102%;
-    }
+}
+.section0 {
+    margin-top: 10%;
+}
+.section1 {
+    margin-top: 56%;
+}
+.section2 {
+    margin-top: 102%;
 }
 </style>

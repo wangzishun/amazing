@@ -1,12 +1,5 @@
 <template>
-    <div
-        ref="numberRun"
-        :data-time="time"
-        class="number-run"
-        :data-value="value"
-    >
-        0
-    </div>
+    <div ref="numberRun" :data-time="time" :data-value="value"></div>
 </template>
 
 <script>
@@ -74,5 +67,3 @@ export default {
     }
 }
 </script>
-<style lang="scss">
-</style>
