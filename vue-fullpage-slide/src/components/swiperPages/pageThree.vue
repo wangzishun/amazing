@@ -16,7 +16,7 @@
                     class="number-run"
                     :value="item.num"
                     :sign="item.sign"
-                    :run="addAnimation"
+                    :run="callYou"
                 ></numberRun>
                 <h6>{{ item.detail }}</h6>
             </section>
@@ -24,7 +24,7 @@
         <div
             v-for="el in 4"
             :key="el"
-            :class="[`ripple${el}`, ripple == el ? 'active' : '']"
+            :class="[`ripple${el}`, ripple == el ? 'active' : '', addAnimation]"
         ></div>
     </main>
 </template>
@@ -33,6 +33,7 @@ import numberRun from "@/components/componentNumberRun";
 
 export default {
     name: 'swiperPageThree',
+    props: ['callYou'],
     data() {
         return {
             timer: null,
@@ -47,16 +48,15 @@ export default {
     computed: {
         addAnimation() {
             clearInterval(this.timer);
+            if (!this.callYou) {
+                return;
+            }
             this.timer = setInterval(() => {
                 this.ripple += 1;
                 if (this.ripple > 4) {
                     this.ripple = 1
                 }
             }, 2400);
-            if (this.$store.state.swiperPageIndex == 2) {
-                return true;
-            }
-            return false;
         }
     },
     components: {
@@ -104,7 +104,7 @@ article {
 }
 .article1 {
     section {
-        width: 47%;
+        width: 45%;
         &.number0 {
             margin-top: 10%;
         }

@@ -1,33 +1,33 @@
 <template>
-    <div class="swiper-page-main">
+    <article>
         <swiper :options="swiperOption" ref="swiperPageMain">
-            <swiper-slide v-for="(val, index) in swiperPageList" :key="index">
-                <div :class="`page-container swiper-page-${index}`" :style="{}">
+            <swiper-slide
+                class="home-swiper-slied"
+                v-for="(page, index) in swiperPageList"
+                :key="index"
+            >
+                <section class="swiper-section">
                     <component
-                        class="delay-1s"
-                        :class="{ animated: flag, fadeIn: flag, slower: flag }"
-                        :is="val"
+                        :is="page"
                         :style="{
                             width: vw + 'px',
                             height: vh + 'px',
                             background: `url(/static/img/bg_${index}.png) no-repeat center`,
-                            backgroundSize: 'cover',
+                            backgroundSize: 'contain',
                             backgroundColor: '#051031'
                         }"
+                        :callYou="swiperPageIndex == index"
                         :ref="`swiperPage${index}`"
                     >
                     </component>
-                </div>
+                </section>
             </swiper-slide>
         </swiper>
-        <div
-            class="dialog animated"
-            :class="[isHome ? 'heartBeat' : 'zoomOut']"
-        >
+        <div :class="['homeBtn', 'animated', isHome ? 'heartBeat' : 'zoomOut']">
             <p>了解更多</p>
-            <div class="touch-btn" @click="nextPage"></div>
+            <i @click="nextPage"></i>
         </div>
-    </div>
+    </article>
 </template>
  
 <script>
@@ -48,9 +48,10 @@ export default {
     ],
     data() {
         return {
-            swiperPageList: ['pageOne', 'pageTwo', 'pageThree', 'pageFour', 'pageFive', 'pageSix', 'pageSeven', 'pageEight'],
             isHome: true,
+            flag: false,
 
+            swiperPageList: ['pageOne', 'pageTwo', 'pageThree', 'pageFour', 'pageFive', 'pageSix', 'pageSeven', 'pageEight'],
             swiperOption: { // swiper选项
                 notNextTick: true, //notNextTick是一个组件自有属性，如果notNextTick设置为true，组件则不会通过NextTick来实例化swiper，也就意味着你可以在第一时间获取到swiper对象，假如你需要刚加载遍使用获取swiper对象来做什么事，那么这个属性一定要是true
                 speed: 500,
@@ -68,9 +69,7 @@ export default {
                         this.storeSwitchPageIndex(this.swiper.activeIndex);
                     },
                 }
-
             },
-            flag: false,
 
         };
     },
@@ -81,12 +80,10 @@ export default {
         nextPage(e) {
             e.preventDefault();
             this.swiper.slideNext();
-            // this.storeSwitchPageIndex(this.swiper.activeIndex);
         },
     },
     watch: {
         swiperPageIndex(val) {
-            console.log(val);
             this.isHome = (val == 0) ? true : false;
             this.swiper.slideTo(val);
         }
@@ -115,19 +112,20 @@ export default {
 };
 </script>
 <style lang="scss">
-.swiper-slide {
+.home-swiper-slied {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    .swiper-section {
+        position: absolute;
+        left: 50%;
+        transform: translate(-50%, 0);
+    }
 }
-.page-container {
-    position: absolute;
-    left: 50%;
-    transform: translate(-50%, 0);
-}
-.dialog {
+
+.homeBtn {
     position: fixed;
-    bottom: 8%;
+    bottom: 5%;
     margin-left: -1rem;
     left: 50%;
     text-align: center;
@@ -138,7 +136,7 @@ export default {
         font-size: 0.28rem;
         line-height: 0.56rem;
     }
-    .touch-btn {
+    i {
         position: absolute;
         width: 0.3rem;
         height: 0.3rem;
@@ -149,7 +147,6 @@ export default {
     }
 }
 
-.title,
 h1 {
     font-size: 0.4rem;
     text-align: center;

@@ -2,22 +2,28 @@
     <main>
         <h1>专属服务</h1>
         <section
-            v-for="(el, i) in contentList"
+            v-for="(content, i) in contentList"
             :key="i"
-            :class="['animated', `section${i}`, flag ? 'bounceInDown' : '']"
+            :class="['animated delay-500', `section${i}`, animationCallYou(i)]"
         >
-            <h6>{{ el.title }}</h6>
-            <p>{{ el.detail }}</p>
+            <h6>{{ content.title }}</h6>
+            <p>{{ content.detail }}</p>
         </section>
-        <div class="img-content" :class="{ rotate: addAnimation }"></div>
+        <div class="img-content" :class="{ rotate: callYou }"></div>
     </main>
 </template>
 <script>
 export default {
     name: 'swiperPageFour',
+    props: ['callYou'],
     data() {
         return {
-            flag: false,
+            animationObj: {
+                0: 'rotateInDownLeft',
+                1: 'rotateInDownRight',
+                2: 'rotateInUpLeft',
+                3: 'rotateInUpRight',
+            },
             contentList: [
                 { title: '经纪公司', detail: '自主拍摄&上传' },
                 { title: '平台', detail: '有偿拼接3D户型' },
@@ -26,16 +32,24 @@ export default {
             ]
         }
     },
+    // methods: {
+    //     animationCallYou(i) {
+    //         if (!this.callYou) {
+    //             return;
+    //         }
+    //         return this.animationObj[i];
+    //     }
+    // },
     computed: {
-        addAnimation() {
-            if (this.$store.state.swiperPageIndex == 3) {
-                this.flag = true;
-                return true;
+        animationCallYou(i) {
+            let _this = this;
+            return (i) => {
+                if (_this.callYou) {
+                    return _this.animationObj[i];
+                }
             }
-            this.flag = false;
-            return false;
         }
-    }
+    },
 }
 </script>
 <style lang="scss" scoped>

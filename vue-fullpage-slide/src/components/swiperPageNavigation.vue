@@ -65,9 +65,11 @@ nav {
         ul {
             margin-top: 1.5rem;
             li {
+                height: 1rem;
+                line-height: 1rem;
                 text-align: center;
                 font-size: 0.3rem;
-                margin-bottom: 0.82rem;
+                margin-top: 0.12rem;
             }
         }
     }

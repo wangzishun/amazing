@@ -2,26 +2,20 @@
     <main>
         <h1>拍摄流程</h1>
         <article
-            v-for="(el, i) in contentList"
+            v-for="(content, i) in contentList"
             :key="i"
             :class="[
-                'animated',
-                `article${i}`,
-                `delay-${i}s`,
-                addAnimation
-                    ? i == 0 || i == 3
-                        ? 'slideInLeft'
-                        : 'slideInRight'
-                    : ''
+                `animated article${i} delay-${i * 500}`,
+                animationCallYou(i)
             ]"
         >
-            <h6>{{ el.title }}</h6>
-            <p>{{ el.detail }}</p>
+            <h6>{{ content.title }}</h6>
+            <p>{{ content.detail }}</p>
         </article>
         <componentBtn
             url="#"
             content="查看拍摄教程"
-            :call="flag"
+            :callYou="callYou"
         ></componentBtn>
     </main>
 </template>
@@ -29,9 +23,9 @@
 import componentBtn from "@/components/componentButton";
 export default {
     name: "swiperPageSeven",
+    props: ['callYou'],
     data() {
         return {
-            flag: true,
             contentList: [
                 { title: '移动经纪人app', detail: '登陆后进入发现 > 全景管理' },
                 { title: '拍摄全景', detail: '上传至后台并且关联房源' },
@@ -40,14 +34,11 @@ export default {
             ]
         };
     },
-    computed: {
-        addAnimation() {
-            if (this.$store.state.swiperPageIndex == 6) {
-                this.flag = true;
-                return true;
+    methods: {
+        animationCallYou(i) {
+            if (this.callYou) {
+                return (i == 0 || i == 3) ? 'fadeInLeftBig' : 'fadeInRightBig';
             }
-            this.flag = false;
-            return false;
         }
     },
     components: {

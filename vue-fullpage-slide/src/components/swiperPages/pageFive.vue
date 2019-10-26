@@ -29,7 +29,7 @@
         <componentBtn
             url="#"
             content="查看线上案例"
-            :call="addAnimation"
+            :callYou="callYou"
         ></componentBtn>
     </main>
 </template>
@@ -38,13 +38,14 @@ import componentBtn from '@/components/componentButton'
 
 export default {
     name: 'swiperPageFive',
+    props: ['callYou'],
     data() {
         return {
-            flag: true,
             directiveActive: 0,
             directive: ['房屋全景', '小区全景', '家装/家居', '商业地产'],
             swiperOption: { // swiper选项
                 notNextTick: true, //notNextTick是一个组件自有属性，如果notNextTick设置为true，组件则不会通过NextTick来实例化swiper，也就意味着你可以在第一时间获取到swiper对象，假如你需要刚加载遍使用获取swiper对象来做什么事，那么这个属性一定要是true
+                autoplay: true,
                 speed: 500,
                 setWrapperSize: true,
                 slidesPerView: 1,
@@ -82,22 +83,16 @@ export default {
         }
     },
     methods: {
-        swiperMiniChange(index) {
-            console.log('swiper to ' + index);
+        swiperMiniChange(index) { //当前页面轮播图切换
             this.directiveActive = index;
             this.swiper.slideTo(index);
-        }
+        },
+       
     },
     computed: {
         swiper() {
             return this.$refs.swiperMini.swiper;
         },
-        addAnimation() {
-            if (this.$store.state.swiperPageIndex == 4) {
-                return true;
-            }
-            return false;
-        }
     },
     components: {
         componentBtn,

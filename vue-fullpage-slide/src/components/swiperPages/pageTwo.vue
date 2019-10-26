@@ -4,8 +4,7 @@
         <section
             v-for="(el, i) in contentList"
             :key="i"
-            class="animated"
-            :class="[`section${i}`, addAnimation ? 'fadeInDown' : '']"
+            :class="[`animated delay-500 section${i}`, { fadeInDown: callYou }]"
         >
             <h3 v-html="el.title"></h3>
             <p v-html="el.detail1"></p>
@@ -16,6 +15,7 @@
 <script>
 export default {
     name: 'swiperPageTwo',
+    props: ['callYou'],
     data() {
         return {
             contentList: [
@@ -25,14 +25,6 @@ export default {
             ]
         }
     },
-    computed: {
-        addAnimation() {
-            if (this.$store.state.swiperPageIndex == 1) {
-                return true;
-            }
-            return false;
-        }
-    },
 }
 </script>
 
@@ -40,7 +32,7 @@ export default {
 section {
     position: absolute;
     right: 0;
-    width: 55%;
+    width: 54%;
     h3 {
         font-size: 0.28rem;
         line-height: 0.9rem;

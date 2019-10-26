@@ -1,9 +1,21 @@
 <template>
     <main>
         <h1>全景拍摄</h1>
-        <article v-for="(item, i) in content" :key="i" :class="`article${i}`">
+        <article
+            v-for="(item, i) in content"
+            :key="i"
+            :class="[
+                `animated delay-${i * 1000} article${i}`,
+                { 'fadeIn slower': callYou }
+            ]"
+        >
             <h3>{{ item.title }}</h3>
-            <section>
+            <section
+                :class="[
+                    `animated delay-${(i + 1) * 500} article${i}`,
+                    { 'fadeIn slower': callYou }
+                ]"
+            >
                 <ul>
                     <li v-for="fe in item.feature" :key="fe">{{ fe }}</li>
                 </ul>
@@ -19,9 +31,9 @@
 <script>
 export default {
     name: 'swiperPageSix',
+    props: ['callYou'],
     data() {
         return {
-            flag: true,
             content: [
                 {
                     title: '理光相机型号',
@@ -50,9 +62,6 @@ export default {
             ]
         }
     },
-    computed: {
-
-    }
 }
 </script>
 <style lang="scss" scoped>

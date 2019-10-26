@@ -1,5 +1,5 @@
 <template>
-    <a :href="url" class="animated" :class="{ 'wobble': call }">
+    <a :href="url" class="animated" :class="{ 'wobble': callYou }">
         {{ content }}
         <div class="btn-bg"></div>
     </a>
@@ -7,7 +7,7 @@
 
 <script>
 export default {
-    props: ['url', 'content', 'call'],
+    props: ['url', 'content', 'callYou'],
 }
 </script>
 

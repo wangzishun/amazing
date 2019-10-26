@@ -8,7 +8,7 @@
         <componentBtn
             url=""
             content="免费报名"
-            :call="addAnimation"
+            :callYou="callYou"
             :style="btnStyle"
         ></componentBtn>
     </main>
@@ -17,6 +17,7 @@
 import componentBtn from '@/components/componentButton'
 export default {
     name: 'swiperPageEight',
+    props: ['callYou'],
     data() {
         return {
             btnStyle: {
@@ -25,14 +26,6 @@ export default {
                 borderColor: 'rgba(69, 135, 255, 0.8)',
                 boxShadow: '0rem 0.05rem 0.3rem rgba(69,135,255,1)',
             }
-        }
-    },
-    computed: {
-        addAnimation() {
-            if (this.$store.state.swiperPageIndex == 7) {
-                return true;
-            }
-            return false;
         }
     },
     components: {
