@@ -18,10 +18,12 @@
         </section>
       </swiper-slide>
     </swiper>
-    <div :class="['homeBtn', 'animated', isHome ? 'heartBeat' : 'zoomOut']">
-      <p>了解更多</p>
-      <i @click="nextPage"></i>
-    </div>
+    <transition enter-active-class="heartBeat" leave-active-class="zoomOut">
+      <div v-if="isHome" :class="['homeBtn animated']" @click="nextPage">
+        <p>了解更多</p>
+        <i></i>
+      </div>
+    </transition>
   </article>
 </template>
  

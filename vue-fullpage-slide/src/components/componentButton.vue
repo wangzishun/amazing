@@ -27,6 +27,7 @@ a {
     font-size: 0.26rem;
     font-weight: 600;
     color: rgba(255, 255, 255, 1);
+    z-index: 800;
     .btn-bg {
         display: inline-block;
         width: 0.3rem;
