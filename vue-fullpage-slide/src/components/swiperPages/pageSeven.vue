@@ -13,7 +13,7 @@
             <p>{{ content.detail }}</p>
         </article>
         <componentBtn
-            url="#"
+            url="https://h5.anjuke.com/mweb/#/guide-quanjing"
             content="查看拍摄教程"
             :callYou="callYou"
         ></componentBtn>

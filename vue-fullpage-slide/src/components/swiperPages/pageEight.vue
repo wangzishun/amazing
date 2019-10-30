@@ -6,7 +6,7 @@
             <p>帮您增加房源曝光量，精准获客，提升看房效率</p>
         </article>
         <componentBtn
-            url=""
+            url="https//survey.58.com/?id=1005981&hash=of41"
             content="免费报名"
             :callYou="callYou"
             :style="btnStyle"
