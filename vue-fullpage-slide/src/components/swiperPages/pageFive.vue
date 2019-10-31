@@ -115,9 +115,9 @@ export default {
     height: 0.6rem;
     line-height: 0.6rem;
     text-align: center;
-    transition: 1s;
+    border-radius: 0.3rem;
+    transition: 0.5s;
     &.active {
-      border-radius: 0.3rem;
       background-color: rgba(69, 135, 255, 1);
       border-color: rgba(69, 135, 255, 0.8);
       box-shadow: 0rem 0.05rem 0.3rem rgba(69, 135, 255, 0.6);

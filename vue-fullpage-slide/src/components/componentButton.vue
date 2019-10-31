@@ -1,5 +1,5 @@
 <template>
-    <a :href="url" class="animated" :class="{ 'wobble': callYou }">
+    <a :href="url" class="animated" :class="{ '': callYou }">
         {{ content }}
         <div class="btn-bg"></div>
     </a>

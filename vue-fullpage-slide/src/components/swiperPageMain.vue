@@ -72,7 +72,7 @@ export default {
     storeSwitchPageIndex(i) { // 更改页面索引
       this.pageIndex = i;
       this.isHome = (i == 0) ? true : false;
-      // this.$store.commit('switchPageIndex', { swiperPageIndex: i })
+      this.$store.commit('switchPageIndex', { swiperPageIndex: i })
     },
     nextPage(e) {
       e.preventDefault();

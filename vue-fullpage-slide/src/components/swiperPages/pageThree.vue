@@ -134,9 +134,9 @@ article {
     width: 0.2rem;
     height: 0.2rem;
     border-radius: 50%;
+    background-color: #94fff5;
     transition: 1s;
     &.active {
-        background-color: #94fff5;
         animation: ripple 2s linear 1;
         &::before,
         &::after {
