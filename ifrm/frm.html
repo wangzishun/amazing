@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        html {
+            /* overflow: hidden; */
+        }
+
+        .test {
+            width: 5vw;
+            height: 150vh;
+            background-color: brown;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="ifrm-wrapper">
+        <iframe id="ifrm" src="http://127.0.0.1:5501/ifrm/test.html" frameborder="0" width="100%"
+            height="100%"></iframe>
+    </div>
+
+</body>
+
+<script>
+    function setIfrmHeight(ifrm) {
+        var iframeDoc = ifrm.contentDocument || ifrm.contentWindow.document;
+        var offsetHeight = iframeDoc.childNodes[1].offsetHeight;
+        var clientHeight = document.documentElement.clientHeight || document.body.clientHeight;
+        ifrm.height = offsetHeight > (clientHeight - 35) ? offsetHeight : (clientHeight - 35);
+    }
+
+    function iframeOnload() {
+        console.log('jiazai');
+        
+        var ifrm = document.getElementById("ifrm");
+        if (ifrm.attachEvent) {
+            ifrm.attachEvent("onload", function () {
+                setFrameHeight(this);
+            });
+        } else {
+            ifrm.onload = function () {
+                setIfrmHeight(this);
+            };
+        }
+    }
+    iframeOnload();
+</script>
+
+</html>
