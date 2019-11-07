@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>Vue.js Drag And Drop</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+    <style>
+        /* Prevent the text contents of draggable elements from being selectable. */
+        [draggable] {
+            -moz-user-select: none;
+            -khtml-user-select: none;
+            -webkit-user-select: none;
+            user-select: none;
+        }
+
+        li {
+            color: black;
+        }
+
+        .dragging {
+            opacity: 0.8;
+            color: #6894D1;
+        }
+
+        .drag-over {
+            outline: 1px solid red;
+        }
+
+        .drag-enter {
+            color: #C93742;
+        }
+
+        .image {
+            width: 100px;
+            height: 100px;
+            background-color: brown;
+            border: dotted 1px yellowgreen;
+            float: left;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container" id="app">
+        <pre v-text="loggedEvent"></pre>
+        <h3>Some Images</h3>
+        <div class="image" v-for="(image, index) in images" draggable v-on:drag="handleDrag" v-on:drop="handleImageDrop"
+            v-on:dragover.prevent @mousedown="fake($event)">
+        </div>
+    </div>
+    <!-- <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.min.js"></script> -->
+    <!-- <script src="https://cdn.jsdelivr.net/npm/vue"></script> -->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script>
+        /* globals Vue */
+        new Vue({
+            el: '#app',
+            data: {
+                currentlyDragging: null,
+                loggedEvent: '',
+                images: [{ name: 'Image 1', src: 'http://placehold.it/100/000000/ffffff' }, { name: 'Image 2', src: 'http://placehold.it/100/C93742/ffffff' }, { name: 'Image 3', src: 'http://placehold.it/100/6894D1/ffffff' }]
+            },
+            methods: {
+                // handleDragStart: function (e) {
+                //     console.log('handleDragStart', e);
+                //     this.loggedEvent = 'handleDragStart';
+                // },
+                // handleDragOver: function (e) {
+                //     console.log('handleDragOver', e);
+                //     this.loggedEvent = 'handleDragOver';
+                // },
+                // handleDragEnter: function (e) {
+                //     console.log('handleDragEnter', e);
+                //     this.loggedEvent = 'handleDragEnter';
+                // },
+                // handleDragLeave: function (e) {
+                //     console.log('handleDragLeave', e);
+                //     this.loggedEvent = 'handleDragLeave';
+                // },
+                // handleDragEnd: function (e) {
+                //     console.log('handleDragEnd', e);
+                //     this.loggedEvent = 'handleDragEnd';
+                // },
+                handleDrop: function (e) {
+                    console.log('handleDrop', this.currentlyDragging, e.target);
+                    this.currentlyDragging = null;
+                    this.loggedEvent = 'handleDrop';
+                },
+                handleImageDrop: function (e) {
+                    console.log('handleImageDrop', this.currentlyDragging, e.target);
+                    this.currentlyDragging = null;
+                    this.loggedEvent = 'handleImageDrop';
+                },
+                handleDrag: function (e) {
+                    console.log('handleDrag', e);
+                    this.loggedEvent = 'handleDrag';
+                    if (!this.currentlyDragging) {
+                        this.currentlyDragging = e.srcElement;
+                    }
+                },
+                fake: function (e) {
+                    console.log('mousedown');
+                    e.target.dragDrop()
+                }
+            }
+        });
+    </script>
+</body>
+
+</html>
