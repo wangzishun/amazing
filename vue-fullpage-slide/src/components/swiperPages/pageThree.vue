@@ -133,9 +133,8 @@ article {
     position: absolute;
     width: 0.2rem;
     height: 0.2rem;
-    border-radius: 50%;
+    border-radius: 0.1rem;
     background-color: #94fff5;
-    transition: 1s;
     &.active {
         animation: ripple 2s linear 1;
         &::before,
@@ -146,7 +145,7 @@ article {
             left: 0;
             right: 0;
             bottom: 0;
-            border-radius: 50%;
+            border-radius: 0.1rem;
             animation: ripple 2s linear 0.5s 1;
         }
 

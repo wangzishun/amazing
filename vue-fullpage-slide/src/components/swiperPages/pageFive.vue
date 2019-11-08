@@ -5,26 +5,32 @@
       <li
         v-for="(el, index) in directive"
         :key="index"
-        :class="[
-                    directiveActive == index ? 'animated active pulse' : ''
-                ]"
+        :class="[directiveActive == index ? ' active pulse' : '']"
         @click="swiperMiniChange(index)"
-      >{{ el }}</li>
+      >
+        {{ el }}
+      </li>
     </ul>
     <swiper :options="swiperOption" ref="swiperMini" style>
       <swiper-slide v-for="(content, index) in contentList" :key="index">
         <article>
-          <section v-for="(item, index) in content" :key="index">
-            <img :src="`/static/img/${item.img}.png`" alt />
-            <div class="content">
-              <h6 v-html="item.title"></h6>
-              <p v-html="item.detail"></p>
-            </div>
-          </section>
+          <a :href="changeUrl">
+            <section v-for="(item, index) in content" :key="index">
+              <img :src="`/static/img/${item.img}.png`" alt />
+              <div class="content">
+                <h6 v-html="item.title"></h6>
+                <p v-html="item.detail"></p>
+              </div>
+            </section>
+          </a>
         </article>
       </swiper-slide>
     </swiper>
-    <componentBtn :url="changeUrl" content="查看线上案例" :callYou="callYou"></componentBtn>
+    <componentBtn
+      :url="changeUrl"
+      content="查看线上案例"
+      :callYou="callYou"
+    ></componentBtn>
   </main>
 </template>
 <script>
@@ -116,7 +122,7 @@ export default {
     line-height: 0.6rem;
     text-align: center;
     border-radius: 0.3rem;
-    transition: 0.5s;
+    // transition: 0.5s;
     &.active {
       background-color: rgba(69, 135, 255, 1);
       border-color: rgba(69, 135, 255, 0.8);

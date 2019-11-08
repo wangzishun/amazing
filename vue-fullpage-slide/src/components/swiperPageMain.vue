@@ -1,17 +1,27 @@
 <template>
   <article>
     <swiper :options="swiperOption" ref="swiperPageMain">
-      <swiper-slide class="home-swiper-slied" v-for="(page, index) in swiperPageList" :key="index">
+      <swiper-slide
+        class="home-swiper-slied"
+        v-for="(page, index) in swiperPageList"
+        :key="index"
+      >
         <section class="swiper-section">
           <component
             :is="page"
-            :style="{
+            :style="[
+              {
                 width: vw + 'px',
-                height: vh + 'px',
-                background: `url(/static/img/bg_${index}.png) no-repeat center`,
-                backgroundSize: 'contain',
-                backgroundColor: '#051031'
-            }"
+                height: vh + 'px'
+              },
+              index != 7
+                ? {
+                    background: `url(/static/img/bg_${index}.png) no-repeat center`,
+                    backgroundSize: 'contain',
+                    boxShadow: '#051031 0px 0px 57px 8px inset'
+                  }
+                : ''
+            ]"
             :callYou="pageIndex == index"
             :ref="`swiperPage${index}`"
           ></component>

@@ -32,17 +32,16 @@ export default {
 section {
     position: absolute;
     right: 0;
-    width: 54%;
+    width: 52.5%;
     h3 {
         font-size: 0.28rem;
-        line-height: 0.9rem;
+        line-height: 0.95rem;
         background: url(/static/img/icon_title.png) no-repeat;
         background-size: contain;
-        height: 0.9rem;
-        width: 2rem;
+        height: 0.95rem;
+        width: 2.02rem;
         text-align: center;
         font-weight: 600;
-        margin-bottom: 4%;
     }
     p {
         display: inline-block;

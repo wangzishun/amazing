@@ -9,6 +9,7 @@
             <h6>{{ content.title }}</h6>
             <p>{{ content.detail }}</p>
         </section>
+        <div class="logo"></div>
         <div class="img-content" :class="{ rotate: callYou }"></div>
     </main>
 </template>
@@ -19,10 +20,10 @@ export default {
     data() {
         return {
             animationObj: {
-                0: 'rotateInDownLeft',
-                1: 'rotateInDownRight',
-                2: 'rotateInUpLeft',
-                3: 'rotateInUpRight',
+                0: 'fadeInDown',
+                1: 'fadeInDown',
+                2: 'fadeInDown',
+                3: 'fadeInDown',
             },
             contentList: [
                 { title: '经纪公司', detail: '自主拍摄&上传' },
@@ -89,7 +90,18 @@ section {
     background: url(/static/img/dynamic.png) no-repeat center;
     background-size: contain;
 }
+.logo{
+    width: 1.18rem;
+    height: 0.57rem;
+    position: absolute;
+    top: 52%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 666;
+    background: url(/static/img/logo2.png) no-repeat center ;
+    background-size: contain;
 
+}
 .rotate {
     animation: rotating-box 1.5s ease-in-out;
 }
