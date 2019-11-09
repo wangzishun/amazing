@@ -16,19 +16,29 @@
 </head>
 
 <body>
-    <div></div>
+    <div id="test">
+        <button onclick="test()">sdf</button>
+    </div>
+
     <iframe id="fakerIframe" style="display:none" src="http://127.0.0.1:5500/faker.html"></iframe>
 </body>
 <script>
     function setFaker() {
-        var cHeight = Math.max(document.body.clientHeight, document.documentElement.clientHeight)
-        var sHeight = Math.max(document.body.scrollHeight, document.documentElement.scrollHeight)
+        // var cHeight = Math.max(document.body.clientHeight, document.documentElement.clientHeight)
+        // var sHeight = Math.max(document.body.scrollHeight, document.documentElement.scrollHeight)
         var faker = document.getElementById('fakerIframe')
         if (faker) {
-            faker.src = 'http://127.0.0.1:5500/faker.html#' + Math.max(cHeight, sHeight)
+            console.log('setFaker');
+            faker.src = 'http://127.0.0.1:5500/faker.html?height=' + Math.max(document.body.clientHeight, document.body.scrollHeight)
         }
     };
     window.onload = setFaker
+
+    function test() {
+        testH = document.getElementById('test').style.height = '2000px'
+        setFaker()
+        console.log(testH);
+    }
 </script>
 
 </html>
