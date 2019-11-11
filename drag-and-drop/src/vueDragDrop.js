@@ -6,7 +6,7 @@
             bind: function (el, binding, vnode) {
                 this.handleDragStart = function (e) {
                     e.target.classList.add('dragging');
-                    e.dataTransfer.effectAllowed = 'move';
+                    // e.dataTransfer.effectAllowed = 'move';
                     e.dataTransfer.setData('text', '*');
                     vnode.context.$emit('dragStart');
                 }.bind(this);
@@ -15,7 +15,7 @@
                     if (e.preventDefault) {
                         e.preventDefault();
                     }
-                    e.dataTransfer.dropEffect = 'move';
+                    // e.dataTransfer.dropEffect = 'move';
                     e.target.classList.add('drag-over');
                     vnode.context.$emit('dragOver');
 

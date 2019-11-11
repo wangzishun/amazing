@@ -73,6 +73,9 @@ export default {
                 }, false);
 
                 el.addEventListener('drop', (e) => {
+                    if (e.stopPropagation) {
+                        e.stopPropagation();
+                    }
                     e.target.classList.remove('drag-enter');
                 }, false);
 
