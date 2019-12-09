@@ -1,6 +1,6 @@
 <template>
     <main>
-        <h1>专属服务</h1>
+        <h1>赋能服务</h1>
         <section
             v-for="(content, i) in contentList"
             :key="i"
@@ -26,10 +26,10 @@ export default {
                 3: 'fadeInDown',
             },
             contentList: [
-                { title: '经纪公司', detail: '自主拍摄&上传' },
-                { title: '平台', detail: '有偿拼接3D户型' },
-                { title: '公司', detail: 'API对接，全网展示' },
-                { title: '平台摄影师', detail: '付费拍摄效率翻倍' },
+                { title: '经纪人', detail: '自主拍摄&上传' },
+                { title: '58平台', detail: '共享门店/公司图库' },
+                { title: '经纪公司', detail: 'API对接，双网展示' },
+                { title: 'VR摄影师', detail: '预约拍摄，高效便捷' },
             ]
         }
     },

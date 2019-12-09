@@ -39,9 +39,9 @@ export default {
             timer: null,
             ripple: 1,
             numberList: [
-                [{ num: 350, detail: '房均点击量', sign: '%', showImg: true }, { num: 130, detail: '房均停留时长', sign: '%', showImg: true }, { num: 40, detail: '用户返回率', sign: '%', showImg: true }],
+                [{ num: 153, detail: '房均点击量', sign: '%', showImg: true }, { num: 600, detail: '房均停留时长', sign: '%', showImg: true }, { num: 40, detail: '用户返回率', sign: '%', showImg: true }],
                 [{ num: 500, detail: '覆盖城市', sign: '+', showImg: false }, { num: 34000, detail: '覆盖经纪门店', sign: '+', showImg: false },],
-                [{ num: 10000, detail: '合作经济公司', sign: '+', showImg: false }, { num: 400000, detail: '服务经纪人量', sign: '+', showImg: false }],
+                [{ num: 10000, detail: '合作经纪公司', sign: '+', showImg: false }, { num: 400000, detail: '服务经纪人量', sign: '+', showImg: false }],
             ]
         }
     },

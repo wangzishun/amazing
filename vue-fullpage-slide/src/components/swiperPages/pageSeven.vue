@@ -41,10 +41,10 @@ export default {
   data() {
     return {
       contentList: [
-        { title: '移动经纪人app', detail: '登陆后进入发现 > 全景管理' },
-        { title: '拍摄全景', detail: '上传至后台并且关联房源' },
-        { title: '前台展示', detail: '【安居客&58】展示3D全景房源' },
-        { title: '付费3D拼接', detail: '购买拼接券进行3D户型拼接' },
+        { title: '移动经纪人app', detail: '登录APP>首页“全景”' },
+        { title: '拍摄全景', detail: '全景拍摄并上传后台' },
+        { title: '付费拼接', detail: '付费拼接3D户型' },
+        { title: '前台展示', detail: '展示3D全景房源' },
       ]
     };
   },
