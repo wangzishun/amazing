@@ -14,9 +14,9 @@
                 width: vw + 'px',
                 height: vh + 'px'
               },
-              index != 7
+              index != 8
                 ? {
-                    background: `url(/static/img/bg_${index}.png) no-repeat center`,
+                    background: `url(/static/img/${bgMap[index]}.png) no-repeat center`,
                     backgroundSize: 'contain',
                     boxShadow: '#051031 0px 0px 57px 8px inset'
                   }
@@ -44,6 +44,7 @@ import pageThree from '@/components/swiperPages/pageThree';
 import pageFour from '@/components/swiperPages/pageFour';
 import pageFive from '@/components/swiperPages/pageFive';
 import pageSix from '@/components/swiperPages/pageSix';
+import pageSixB from '@/components/swiperPages/pageSixB';
 import pageSeven from '@/components/swiperPages/pageSeven';
 import pageEight from '@/components/swiperPages/pageEight';
 
@@ -55,10 +56,11 @@ export default {
   ],
   data() {
     return {
+      bgMap:{0:'bg_0', 1:'bg_1', 2:'bg_2', 3:'bg_3', 4:'bg_4', 5:'bg_5_1',6:'bg_5_2', 7:'bg_6', 8:'bg_7', 9:'bg_8'},
       isHome: true,
       flag: false,
       pageIndex: 0,
-      swiperPageList: ['pageOne', 'pageTwo', 'pageThree', 'pageFour', 'pageFive', 'pageSix', 'pageSeven', 'pageEight'],
+      swiperPageList: ['pageOne', 'pageTwo', 'pageThree', 'pageFour', 'pageFive', 'pageSix', 'pageSixB', 'pageSeven', 'pageEight'],
       swiperOption: { // swiper选项
         notNextTick: true, //notNextTick是一个组件自有属性，如果notNextTick设置为true，组件则不会通过NextTick来实例化swiper，也就意味着你可以在第一时间获取到swiper对象，
         speed: 500,
@@ -113,6 +115,7 @@ export default {
     pageFour,
     pageFive,
     pageSix,
+    pageSixB,
     pageSeven,
     pageEight
   },

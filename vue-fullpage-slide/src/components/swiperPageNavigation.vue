@@ -38,7 +38,7 @@ export default {
     data() {
         return {
             navActionFlag: false,
-            navList: ['首页', '品牌优势', '全景效果', '专属服务', '行业应用', '全景拍摄', '拍摄流程', '合作伙伴'],
+            navList: ['首页', '品牌优势', '全景效果', '赋能服务', '行业应用', '全景拍摄', '拍摄流程', '合作伙伴'],
         }
     },
     methods: {
