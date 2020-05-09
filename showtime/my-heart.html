@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>All Yours</title>
+  <style>
+    body {
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+    }
+    @keyframes heart-beat {
+    to {
+        box-shadow: var(--sweat-heart);
+        color: rgba(255, 0, 0, 0.5);
+      }
+    }
+
+    @keyframes beat-for-you {
+      to {
+          filter: drop-shadow(7em 2em dodgerblue);
+      }
+    }
+    .heart {
+      width: 1rem;
+      height: 1rem;
+      border-radius: 50%;
+      filter: drop-shadow(0 0 dodgerblue);
+      color: red;
+      background-color: currentColor;
+      /* box-shadow: var(--sweat-heart); */
+      --sweat-heart: 
+            -4rem -3rem,-3rem -3rem,                                    01rem -3rem,02rem -3rem,
+
+-5rem -2rem,-4rem -2rem,-3rem -2rem,-2rem -2rem,            00rem -2rem,01rem -2rem,02rem -2rem,03rem -2rem,
+
+-5rem -1rem,-4rem -1rem,-3rem -1rem,-2rem -1rem,-1rem -1rem,00rem -1rem,01rem -1rem,02rem -1rem,03rem -1rem,
+
+-5rem 00rem,-4rem 00rem,-3rem 00rem,-2rem 00rem,-1rem 00rem,00rem 00rem,01rem 00rem,02rem 00rem,03rem 00rem,
+
+            -4rem 01rem,-3rem 01rem,-2rem 01rem,-1rem 01rem,00rem 01rem,01rem 01rem,02rem 01rem,
+
+                        -3rem 02rem,-2rem 02rem,-1rem 02rem,00rem 02rem,01rem 02rem,
+
+                                    -2rem 03rem,-1rem 03rem,00rem 03rem,
+
+                                                  -1rem 04rem;
+      /* animation:heart-one 1s infinite alternate cubic-bezier(0.5, 1.7, 0.5, 1.5); */
+      animation: 
+        heart-beat 1s infinite alternate cubic-bezier(0.5, 1, 0.5, 2),
+        beat-for-you 1s infinite alternate;
+    }
+  </style>
+
+</head>
+
+<body>
+  <div class="heart"></div>
+</body>
+
+</html>
