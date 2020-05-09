@@ -2,7 +2,7 @@
  * @Author       : wangzishun
  * @Date         : 2020-05-09 15:21:30
  * @LastEditors  : wangzishun
- * @LastEditTime : 2020-05-09 16:16:24
+ * @LastEditTime : 2020-05-09 17:04:13
  * @Description  :
  */
 import loadsh from 'loadsh';
@@ -17,7 +17,6 @@ function component() {
   btn.innerHTML = 'click me and check the console';
   btn.onclick = printMe;
   element.appendChild(btn);
-
   return element;
 }
 

@@ -2,7 +2,7 @@
  * @Author       : wangzishun
  * @Date         : 2020-05-09 15:28:35
  * @LastEditors  : wangzishun
- * @LastEditTime : 2020-05-09 16:29:38
+ * @LastEditTime : 2020-05-09 17:21:54
  * @Description  :
  */
 
@@ -18,6 +18,7 @@ module.exports = {
   output: {
     filename: '[name].bundle.js',
     path: path.resolve(__dirname, 'dist'),
+    publicPath: '/'
   },
   plugins: [
     new CleanWebpackPlugin({
@@ -27,4 +28,8 @@ module.exports = {
       title: 'Ouput Management',
     }),
   ],
+  devtool: 'inline-source-map',
+  devServer: {
+    contentBase: './dist',
+  },
 };
