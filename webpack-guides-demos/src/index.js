@@ -2,16 +2,17 @@
  * @Author       : wangzishun
  * @Date         : 2020-05-09 15:21:30
  * @LastEditors  : wangzishun
- * @LastEditTime : 2020-05-09 18:17:19
+ * @LastEditTime : 2020-05-17 11:43:08
  * @Description  :
  */
-import { cube } from './math.js';
-
 function component() {
-  var element = document.createElement('pre');
+  var element = document.createElement('div');
 
-  element.innerHTML = ['hello webpack', '4 cubed is equal to ' + cube(4)].join('\n');
+  // element.innerHTML = _.join(['Hello', 'webpack'], ' ');
+  element.innerHTML = join(['Hello', 'webpack'], ' ');
 
+  this.alert("Hmmm, this probably isn't a great idea...");
+  const s = 'sss';
   return element;
 }
 
